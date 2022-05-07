@@ -1,0 +1,245 @@
+Using pre-set license
+Built from '2021.2/staging' branch; Version is '2021.2.7f1 (6bd9e232123f) revision 7068130'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Professional' Language: 'en' Physical Memory: 32689 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.2.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Users/madal/OneDrive/!Platformer/Untitled Platformer
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+51361
+Successfully changed project path to: C:/Users/madal/OneDrive/!Platformer/Untitled Platformer
+C:/Users/madal/OneDrive/!Platformer/Untitled Platformer
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 44.43 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.7f1 (6bd9e232123f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/madal/OneDrive/!Platformer/Untitled Platformer/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 Ti (ID=0x1e07)
+    Vendor:   NVIDIA
+    VRAM:     11049 MB
+    Driver:   30.0.14.9676
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56088
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004864 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 43.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.485 seconds
+Domain Reload Profiling:
+	ReloadAssembly (486ms)
+		BeginReloadAssembly (64ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (356ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (82ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (207ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (44ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (113ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 33.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.086 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1087ms)
+		BeginReloadAssembly (82ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (932ms)
+			LoadAssemblies (58ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (137ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (662ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (34ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (541ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2520 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 47 unused Assets / (129.5 KB). Loaded Objects now: 2981.
+Memory consumption went from 114.7 MB to 114.6 MB.
+Total: 2.793400 ms (FindLiveObjects: 0.165100 ms CreateObjectMapping: 0.054500 ms MarkObjects: 2.502100 ms  DeleteObjects: 0.070900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1146420.415642 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_181.asset
+  artifactKey: Guid(6017517c4109c9744b92d24509dfdc25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_181.asset using Guid(6017517c4109c9744b92d24509dfdc25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '164e65ba47a70cab431e422c142a6ee2') in 0.044877 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_184.asset
+  artifactKey: Guid(eec5ef160975f844f9c4ca75158091d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_184.asset using Guid(eec5ef160975f844f9c4ca75158091d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '770b61e037139c82ac2a56b19edff71f') in 0.011510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_182.asset
+  artifactKey: Guid(e98e1ca83a0353a478f5401f3ecdd5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_182.asset using Guid(e98e1ca83a0353a478f5401f3ecdd5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3b393e95e76f3fdaabf34fb3ce1b80') in 0.005850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_187.asset
+  artifactKey: Guid(d6831f293bfd7c741af4dfd01ef99dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_187.asset using Guid(d6831f293bfd7c741af4dfd01ef99dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee2e95dbce1519a83104254d7f69d5c') in 0.011675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_189.asset
+  artifactKey: Guid(e6ede9eff561c4548879b186d6021bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_189.asset using Guid(e6ede9eff561c4548879b186d6021bae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5729746f7179d15938d27fd5b2dda460') in 0.009624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.691877 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_178.asset
+  artifactKey: Guid(c6331c889a2c5e24eabdc1bef5b365c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_178.asset using Guid(c6331c889a2c5e24eabdc1bef5b365c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bee35c36d7f9a5aad9e95f0ab5c786a') in 0.007900 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.048306 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_174.asset
+  artifactKey: Guid(782c145be853fcb4a8d713ec3076476f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_174.asset using Guid(782c145be853fcb4a8d713ec3076476f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b797daeb3d94fbdcdb7163347df7d7b4') in 0.009206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.198970 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_170.asset
+  artifactKey: Guid(e7f1b2a06988dc444b6e53a8c41a6e47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_170.asset using Guid(e7f1b2a06988dc444b6e53a8c41a6e47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9071d8ddfecd41d3d1281cd121c8abcd') in 0.012700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.008551 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_166.asset
+  artifactKey: Guid(c1c7772551eac2045a0e14a32155dd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_166.asset using Guid(c1c7772551eac2045a0e14a32155dd6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6062764627059f74570e2066a8602e69') in 0.006026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006870 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_162.asset
+  artifactKey: Guid(2172e3471c6a716439c2417f9bed7f2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_162.asset using Guid(2172e3471c6a716439c2417f9bed7f2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b667198479122a05065d24b684de8adf') in 0.005782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.186826 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_158.asset
+  artifactKey: Guid(26e07d087ef0fae4cbb7db95914de410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_158.asset using Guid(26e07d087ef0fae4cbb7db95914de410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc7c70a6d14264c3e40e016684da83d5') in 0.006382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.016327 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_150.asset
+  artifactKey: Guid(f9667990bd9d8044dbbe889d334ec4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_150.asset using Guid(f9667990bd9d8044dbbe889d334ec4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b1b147fdb247282e6869c49066b0e4a') in 0.005087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_152.asset
+  artifactKey: Guid(a2c8e40211bb86e4cbd46b298f77b099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_152.asset using Guid(a2c8e40211bb86e4cbd46b298f77b099) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74bca1dfd92c1ee2dc94b2c4246bfa5b') in 0.004263 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_146.asset
+  artifactKey: Guid(e84ec76f1c2ff6e4897efb6365aafa69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_146.asset using Guid(e84ec76f1c2ff6e4897efb6365aafa69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce1af71b638a7cc12cffac4bea2248d0') in 0.007117 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
