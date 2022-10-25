@@ -1,354 +1,444 @@
+// ReSharper disable ClassWithVirtualMembersNeverInherited.Global
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace TarodevController {
-    /// <summary>
-    /// Hey!
-    /// Tarodev here. I built this controller as there was a severe lack of quality & free 2D controllers out there.
-    /// Right now it only contains movement and jumping, but it should be pretty easy to expand... I may even do it myself
-    /// if there's enough interest. You can play and compete for best times here: https://tarodev.itch.io/
-    /// If you hve any questions or would like to brag about your score, come to discord: https://discord.gg/GqeHHnhHpz
-    /// </summary>
-    [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour, IPlayerController {
-        [SerializeField] private bool _allowDoubleJump, _allowDash;
-        
-        // Public for external hooks
-        public FrameInput Input { get; private set; }
-        public Vector3 RawMovement { get; private set; }
-        public bool Grounded => _grounded;
-        public event Action<bool> OnGroundedChanged;
-        public event Action OnJumping, OnDoubleJumping;
-        public event Action<bool> OnDashingChanged;
-        public Animator _anim;
+        [SerializeField] private ScriptableStats _stats;
 
+        private FrameInput _frameInput;
         private Rigidbody2D _rb;
-        private BoxCollider2D _collider;
-        private Vector3 _lastPosition;
-        private Vector3 _velocity;
-        private float _currentHorizontalSpeed, _currentVerticalSpeed;
+        private CapsuleCollider2D[] _cols; // Standing and crouching colliders
+        private CapsuleCollider2D _col; // Current collider
+        private PlayerInput _input;
+
+        private Vector2 _speed;
+        private bool _jumpToConsume;
+        private bool _endedJumpEarly;
         private int _fixedFrame;
-        //float playermoves = 0f;
-        
-        void Awake() {
-            _rb = GetComponent<Rigidbody2D>();
-            _collider = GetComponent<BoxCollider2D>();
+        private bool _coyoteUsed;
+        private bool _coyoteUsable;
+        private bool _doubleJumpUsable;
+        private bool _bufferedJumpUsable;
+        private bool _crouching;
+        private bool _grounded;
+        private Vector2 _groundNormal;
+        private int _frameLeftGrounded = int.MinValue;
+        private int _lastJumpPressed = int.MinValue;
+        private int _frameLastAttacked = int.MinValue;
+        private bool _attackToConsume;
+        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[2];
+        private readonly RaycastHit2D[] _ceilingHits = new RaycastHit2D[1];
+        private readonly Collider2D[] _crouchHits = new Collider2D[5];
+        private readonly Collider2D[] _wallHits = new Collider2D[5];
+        private int _groundHitCount;
+        private Vector2 _currentExternalVelocity;
+        private bool _dashToConsume;
+        private bool _canDash;
+        private Vector2 _dashVel;
+        private bool _dashing;
+        private int _startedDashing;
+        private Bounds _standingColliderBounds;
+        private int _frameStartedCrouching;
+        private bool _isOnWall;
+        private int _wallHitCount;
+        private float _currentWallJumpMoveMultiplier;
+        private int _wallDir;
+
+        #region External
+
+        public Vector2 Speed => _speed;
+        public bool Crouching => _crouching;
+        public Vector2 GroundNormal => _groundNormal;
+        public ScriptableStats PlayerStats => _stats;
+        public int WallDirection => _wallDir;
+        public Vector2 Input => _frameInput.Move;
+        public event Action<bool, float> GroundedChanged;
+        public event Action<bool> WallGrabChanged;
+        public event Action<bool, Vector2> DashingChanged;
+        public event Action Jumped;
+        public event Action DoubleJumped;
+        public event Action Attacked;
+
+        public virtual void ApplyVelocity(Vector2 vel, PlayerForce forceType) {
+            if (forceType == PlayerForce.Burst) _speed += vel;
+            else _currentExternalVelocity += vel;
         }
 
+        #endregion
 
-        private void Update() {
-            // Calculate velocity
-            _velocity = (transform.position - _lastPosition) / Time.deltaTime;
-            _lastPosition = transform.position;
-            //playermoves = UnityEngine.Input.GetAxisRaw("Horizontal") * _acceleration;
-            _anim.SetFloat("Speed", Mathf.Abs(_currentHorizontalSpeed));
+        protected virtual void Awake() {
+            Physics2D.queriesStartInColliders = false;
+
+            _rb = GetComponent<Rigidbody2D>();
+            _cols = GetComponents<CapsuleCollider2D>();
+            _input = GetComponent<PlayerInput>();
+
+            // Colliders cannot be check whilst disabled. Let's cache it instead
+            _standingColliderBounds = _cols[0].bounds;
+            _standingColliderBounds.center = _cols[0].offset;
+
+            SetCrouching(false);
+        }
+
+        protected virtual void Update() {
             GatherInput();
         }
 
-        void FixedUpdate() {
-            _fixedFrame++;
+        protected virtual void GatherInput() {
+            _frameInput = _input.FrameInput;
 
-            RunCollisionChecks();
-
-            CalculateWalk();
-            CalculateJumpApex();
-            CalculateGravity();
-            CalculateJump();
-            CalculateDash();
-            MoveCharacter();
-        }
-
-        #region Gather Input
-
-        private void GatherInput() {
-            Input = new FrameInput {
-                JumpDown = UnityEngine.Input.GetButtonDown("Jump"),
-                JumpHeld = UnityEngine.Input.GetButton("Jump"),
-                DashDown = UnityEngine.Input.GetButtonDown("Dash"),
-                X = UnityEngine.Input.GetAxisRaw("Horizontal"),
-                Y = UnityEngine.Input.GetAxisRaw("Vertical")
-            };
-
-            if (Input.DashDown) _dashToConsume = true;
-            if (Input.JumpDown) {
-                _lastJumpPressed = _fixedFrame;
+            if (_frameInput.JumpDown) {
                 _jumpToConsume = true;
+                _lastJumpPressed = _fixedFrame;
             }
+
+            if (_frameInput.DashDown) _dashToConsume = true;
+            if (_frameInput.AttackDown) _attackToConsume = true;
         }
 
-        #endregion
+        protected virtual void FixedUpdate() {
+            _fixedFrame++;
+            _currentExternalVelocity = Vector2.MoveTowards(_currentExternalVelocity, Vector2.zero, _stats.ExternalVelocityDecay * Time.fixedDeltaTime);
+
+            CheckCollisions();
+            HandleAttacking();
+            HandleCrouching();
+            HandleHorizontal();
+            HandleWalls();
+            HandleJump();
+            HandleDash();
+            HandleFall();
+
+            ApplyVelocity();
+        }
 
         #region Collisions
 
-        [Header("COLLISION")] [SerializeField] private LayerMask _groundLayer;
-        [SerializeField] private int _detectorCount = 3;
-        [SerializeField] private float _detectionRayLength = 0.1f;
+        protected virtual void CheckCollisions() {
+            // Ground & Ceiling
+            var offset = (Vector2)transform.position + _col.offset;
 
-        private RayRange _raysUp, _raysRight, _raysDown, _raysLeft;
+            _groundHitCount =
+                Physics2D.CapsuleCastNonAlloc(offset, _col.size, _col.direction, 0, Vector2.down, _groundHits, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            var ceilingHits = Physics2D.CapsuleCastNonAlloc(offset, _col.size, _col.direction, 0, Vector2.up, _ceilingHits, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
-        private bool _hittingCeiling, _grounded, _colRight, _colLeft;
+            if (ceilingHits > 0 && _speed.y > 0) _speed.y = 0;
 
-        private float _timeLeftGrounded;
-
-
-        // We use these raycast checks for pre-collision information
-        private void RunCollisionChecks() {
-            // Generate ray ranges. 
-            CalculateRayRanged();
-
-            // Ground
-            var groundedCheck = RunDetection(_raysDown);
-            if (_grounded && !groundedCheck) {
-                _timeLeftGrounded = _fixedFrame; // Only trigger when first leaving
-                OnGroundedChanged?.Invoke(false);
-            }
-            else if (!_grounded && groundedCheck) {
-                _coyoteUsable = true; // Only trigger when first touching
-                _executedBufferedJump = false;
+            if (!_grounded && _groundHitCount > 0) {
+                _grounded = true;
+                _coyoteUsable = true;
                 _doubleJumpUsable = true;
+                _bufferedJumpUsable = true;
+                _endedJumpEarly = false;
                 _canDash = true;
-                OnGroundedChanged?.Invoke(true);
+                GroundedChanged?.Invoke(true, Mathf.Abs(_speed.y));
+            }
+            else if (_grounded && _groundHitCount == 0) {
+                _grounded = false;
+                _frameLeftGrounded = _fixedFrame;
+                GroundedChanged?.Invoke(false, 0);
             }
 
-            _grounded = groundedCheck;
-            _colLeft = RunDetection(_raysLeft);
-            _colRight = RunDetection(_raysRight);
-
-            // The rest
-            _hittingCeiling = RunDetection(_raysUp);
-
-            bool RunDetection(RayRange range) {
-                return EvaluateRayPositions(range).Any(point => Physics2D.Raycast(point, range.Dir, _detectionRayLength, _groundLayer));
-            }
-        }
-
-        private void CalculateRayRanged() {
-            var b = _collider.bounds;
-
-            _raysDown = new RayRange(b.min.x, b.min.y, b.max.x, b.min.y, Vector2.down);
-            _raysUp = new RayRange(b.min.x, b.max.y, b.max.x, b.max.y, Vector2.up);
-            _raysLeft = new RayRange(b.min.x, b.min.y, b.min.x, b.max.y, Vector2.left);
-            _raysRight = new RayRange(b.max.x, b.min.y, b.max.x, b.max.y, Vector2.right);
-        }
-
-
-        private IEnumerable<Vector2> EvaluateRayPositions(RayRange range) {
-            for (var i = 0; i < _detectorCount; i++) {
-                var t = (float)i / (_detectorCount - 1);
-                yield return Vector2.Lerp(range.Start, range.End, t);
-            }
-        }
-
-        private void OnDrawGizmos() {
-            if (!_collider) _collider = GetComponent<BoxCollider2D>();
-
-            // Rays
-            if (!Application.isPlaying) CalculateRayRanged();
-            Gizmos.color = Color.blue;
-            foreach (var range in new List<RayRange> { _raysDown, _raysUp }) {
-                foreach (var point in EvaluateRayPositions(range)) {
-                    Gizmos.DrawRay(point, range.Dir * _detectionRayLength);
-                }
-            }
+            // Walls
+            var bounds = GetWallDetectionBounds();
+            _wallHitCount = Physics2D.OverlapBoxNonAlloc(bounds.center, bounds.size, 0, _wallHits, _stats.ClimbableLayer);
         }
 
         #endregion
 
+        #region Attacking
 
-        #region Walk
+        protected virtual void HandleAttacking() {
+            if (!_attackToConsume) return;
 
-        [Header("WALKING")] [SerializeField] private float _acceleration = 90;
-        [SerializeField] private float _moveClamp = 13;
-        [SerializeField] private float _deAcceleration = 60f;
-        [SerializeField] private float _apexBonus = 2;
-
-        private void CalculateWalk() {
-            if (Input.X != 0) {
-                // Set horizontal move speed
-                _currentHorizontalSpeed += Input.X * _acceleration * Time.fixedDeltaTime;
-
-                // clamped by max frame movement
-                _currentHorizontalSpeed = Mathf.Clamp(_currentHorizontalSpeed, -_moveClamp, _moveClamp);
-
-                // Apply bonus at the apex of a jump
-                var apexBonus = Mathf.Sign(Input.X) * _apexBonus * _apexPoint;
-                _currentHorizontalSpeed += apexBonus * Time.fixedDeltaTime;
-            }
-            else {
-                // No input. Let's slow the character down
-                _currentHorizontalSpeed = Mathf.MoveTowards(_currentHorizontalSpeed, 0, _deAcceleration * Time.fixedDeltaTime);
+            if (_frameLastAttacked + _stats.AttackFrameCooldown < _fixedFrame) {
+                _frameLastAttacked = _fixedFrame;
+                Attacked?.Invoke();
             }
 
-            if (_currentHorizontalSpeed > 0 && _colRight || _currentHorizontalSpeed < 0 && _colLeft) {
-                // Don't pile up useless horizontal
-                _currentHorizontalSpeed = 0;
-            }
+            _attackToConsume = false;
         }
 
         #endregion
 
-        #region Gravity
+        #region Crouching
 
-        [Header("GRAVITY")] [SerializeField] private float _fallClamp = -40f;
-        [SerializeField] private float _minFallSpeed = 80f;
-        [SerializeField] private float _maxFallSpeed = 120f;
-        private float _fallSpeed;
+        protected virtual void HandleCrouching() {
+            var crouchCheck = _frameInput.Move.y <= _stats.CrouchInputThreshold;
+            if (crouchCheck != _crouching) SetCrouching(crouchCheck);
+        }
 
+        protected virtual void SetCrouching(bool active) {
+            // Prevent standing into colliders
+            if (_crouching) {
+                var pos = _standingColliderBounds.center + transform.position;
+                pos.y += _standingColliderBounds.extents.y;
+                var size = new Vector3(_standingColliderBounds.size.x, _stats.CrouchBufferCheck);
+                var hits = Physics2D.OverlapBoxNonAlloc(pos, size, 0, _crouchHits);
 
-        private void CalculateGravity() {
-            if (_grounded) {
-                // // Move out of the ground
-                if (_currentVerticalSpeed < 0) {
-                    _currentVerticalSpeed = 0;
+                if (hits > 0) return;
+            }
+
+            _crouching = active;
+            _col = _cols[active ? 1 : 0];
+            _cols[0].enabled = !active;
+            _cols[1].enabled = active;
+
+            if (_crouching) _frameStartedCrouching = _fixedFrame;
+        }
+
+        #endregion
+
+        #region Horizontal
+
+        protected virtual void HandleHorizontal() {
+            if (_frameInput.Move.x != 0) {
+                if (_crouching && _grounded) {
+                    var crouchPoint = Mathf.InverseLerp(0, _stats.CrouchSlowdownFrames, _fixedFrame - _frameStartedCrouching);
+                    var penaltySpeed = _stats.MaxSpeed * Mathf.Lerp(1, _stats.CrouchSpeedPenalty, crouchPoint);
+
+                    _speed.x = Mathf.MoveTowards(_speed.x, penaltySpeed * _frameInput.Move.x, _stats.Deceleration * Time.fixedDeltaTime);
+                }
+                else {
+                    // Prevent useless horizontal wall buildup
+                    if (_rb.velocity.x == 0) {
+                        if (_frameInput.Move.x < 0 && _speed.x > 0) _speed.x = 0;
+                        else if (_frameInput.Move.x > 0 && _speed.x < 0) _speed.x = 0;
+                    }
+
+                    var inputX = _frameInput.Move.x * _currentWallJumpMoveMultiplier;
+                    if (_stats.AllowCreeping) _speed.x = Mathf.MoveTowards(_speed.x, _stats.MaxSpeed * inputX, _stats.Acceleration * Time.fixedDeltaTime);
+                    else _speed.x += inputX * _stats.Acceleration * Time.fixedDeltaTime;
                 }
             }
             else {
-                // Add downward force while ascending if we ended the jump early
-                var fallSpeed = _endedJumpEarly && _currentVerticalSpeed > 0 ? _fallSpeed * _jumpEndEarlyGravityModifier : _fallSpeed;
-
-                // Fall
-                _currentVerticalSpeed -= fallSpeed * Time.fixedDeltaTime;
-
-                // Clamp
-                if (_currentVerticalSpeed < _fallClamp) _currentVerticalSpeed = _fallClamp;
+                _speed.x = Mathf.MoveTowards(_speed.x, 0, _stats.Deceleration * (_grounded ? 1 : _stats.AirDecelerationPenalty) * Time.fixedDeltaTime);
             }
+
+            _speed.x = Mathf.Clamp(_speed.x, -_stats.MaxSpeed, _stats.MaxSpeed);
+        }
+
+        #endregion
+
+        #region Walls
+
+        protected virtual void HandleWalls() {
+            _currentWallJumpMoveMultiplier = Mathf.MoveTowards(_currentWallJumpMoveMultiplier, 1, 1f / _stats.WallJumpInputLossFrames);
+
+            if (!_stats.AllowWalls) return;
+
+            // May need to prioritize the newest wall here... But who is going to make a climbable wall that tight?
+            _wallDir = _wallHitCount > 0 ? (int)Mathf.Sign(_wallHits[0].transform.position.x - transform.position.x) : 0;
+
+            if (_isOnWall && !IsPushing()) SetOnWall(false);
+            else if (!_isOnWall && IsPushing()) SetOnWall(true);
+
+            bool IsPushing() {
+                if (_wallDir == 0) return false;
+                if (_stats.RequireInputPush) return Mathf.Approximately(_frameInput.Move.x, _wallDir);
+                return true;
+            }
+        }
+
+        private void SetOnWall(bool on) {
+            _isOnWall = on;
+            _endedJumpEarly = !on;
+            WallGrabChanged?.Invoke(on);
+        }
+
+        private Bounds GetWallDetectionBounds() {
+            var wallHitOffset = transform.position + _standingColliderBounds.center;
+            return new Bounds(wallHitOffset, _stats.WallDetectorSize);
         }
 
         #endregion
 
         #region Jump
 
-        [Header("JUMPING")] [SerializeField] private float _jumpHeight = 30;
-        [SerializeField] private float _jumpApexThreshold = 10f;
-        [SerializeField] private int _coyoteTimeThreshold = 7;
-        [SerializeField] private int _jumpBuffer = 7;
-        [SerializeField] private float _jumpEndEarlyGravityModifier = 3;
-        private bool _jumpToConsume;
-        private bool _coyoteUsable;
-        private bool _executedBufferedJump;
-        private bool _endedJumpEarly = true;
-        private float _apexPoint; // Becomes 1 at the apex of a jump
-        private float _lastJumpPressed = Single.MinValue;
-        private bool _doubleJumpUsable;
-        private bool CanUseCoyote => _coyoteUsable && !_grounded && _timeLeftGrounded + _coyoteTimeThreshold > _fixedFrame;
-        private bool HasBufferedJump => (_grounded || _cornerStuck) && _lastJumpPressed + _jumpBuffer > _fixedFrame && !_executedBufferedJump;
-        private bool CanDoubleJump => _allowDoubleJump && _doubleJumpUsable && !_coyoteUsable;
+        private bool CanUseCoyote => _coyoteUsable && !_grounded && _frameLeftGrounded + _stats.CoyoteFrames > _fixedFrame;
+        private bool HasBufferedJump => (_grounded || _isOnWall) && _bufferedJumpUsable && _lastJumpPressed + _stats.JumpBufferFrames > _fixedFrame;
+        private bool CanDoubleJump => _stats.AllowDoubleJump && _doubleJumpUsable && !_coyoteUsable;
 
-        private void CalculateJumpApex() {
-            if (!_grounded) {
-                // Gets stronger the closer to the top of the jump
-                _apexPoint = Mathf.InverseLerp(_jumpApexThreshold, 0, Mathf.Abs(_velocity.y));
-                _fallSpeed = Mathf.Lerp(_minFallSpeed, _maxFallSpeed, _apexPoint);
+        protected virtual void HandleJump() {
+            // Wall jump
+            if (!_grounded && ((_isOnWall && _jumpToConsume) || HasBufferedJump)) {
+                var power = _stats.WallJumpPower;
+                power.x *= -_wallDir;
+                _speed = power;
+                _jumpToConsume = false;
+                _currentWallJumpMoveMultiplier = 0;
+                _bufferedJumpUsable = false;
+                SetOnWall(false);
             }
-            else {
-                _apexPoint = 0;
-            }
-        }
 
-        private void CalculateJump() {
+            // Double jump
             if (_jumpToConsume && CanDoubleJump) {
-                _currentVerticalSpeed = _jumpHeight;
+                _speed.y = _stats.JumpPower;
                 _doubleJumpUsable = false;
                 _endedJumpEarly = false;
                 _jumpToConsume = false;
-                OnDoubleJumping?.Invoke();
+                DoubleJumped?.Invoke();
             }
 
-
-            // Jump if: grounded or within coyote threshold || sufficient jump buffer
+            // Standard jump
             if ((_jumpToConsume && CanUseCoyote) || HasBufferedJump) {
-                _currentVerticalSpeed = _jumpHeight;
-                _endedJumpEarly = false;
                 _coyoteUsable = false;
-                _jumpToConsume = false;
-                _timeLeftGrounded = _fixedFrame;
-                _executedBufferedJump = true;
-                OnJumping?.Invoke();
+                _bufferedJumpUsable = false;
+                _speed.y = _stats.JumpPower;
+                Jumped?.Invoke();
             }
 
-            // End the jump early if button released
-            if (!_grounded && !Input.JumpHeld && !_endedJumpEarly && _velocity.y > 0) _endedJumpEarly = true;
-
-            if (_hittingCeiling && _currentVerticalSpeed > 0) _currentVerticalSpeed = 0;
+            // Early end detection
+            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
         }
 
         #endregion
 
         #region Dash
 
-        [Header("DASH")] [SerializeField] private float _dashPower = 50;
-        [SerializeField] private int _dashLength = 3;
-        [SerializeField] private float _dashEndHorizontalMultiplier = 0.25f;
-        private float _startedDashing;
-        private bool _canDash;
-        private Vector2 _dashVel;
+        protected virtual void HandleDash() {
+            if (!_stats.AllowDash) return;
+            if (_dashToConsume && _canDash && !_crouching) {
+                var dir = new Vector2(_frameInput.Move.x, _grounded && _frameInput.Move.y < 0 ? 0 : _frameInput.Move.y).normalized;
+                if (dir == Vector2.zero) {
+                    _dashToConsume = false;
+                    return;
+                }
 
-
-        private bool _dashing;
-        private bool _dashToConsume;
-
-        void CalculateDash() {
-            if (!_allowDash) return;
-            if (_dashToConsume && _canDash) {
-                _dashToConsume = false;
-                var vel = new Vector2(Input.X, _grounded && Input.Y < 0 ? 0 : Input.Y);
-                if (vel == Vector2.zero) return;
-                _dashVel = vel * _dashPower;
+                _dashVel = dir * _stats.DashVelocity;
                 _dashing = true;
-                OnDashingChanged?.Invoke(true);
+                DashingChanged?.Invoke(true, dir);
                 _canDash = false;
                 _startedDashing = _fixedFrame;
+
+                // Strip external buildup
+                _currentExternalVelocity = Vector2.zero;
             }
 
             if (_dashing) {
-                _currentHorizontalSpeed = _dashVel.x;
-                _currentVerticalSpeed = _dashVel.y;
+                _speed = _dashVel;
                 // Cancel when the time is out or we've reached our max safety distance
-                if (_startedDashing + _dashLength < _fixedFrame) {
+                if (_startedDashing + _stats.DashDurationFrames < _fixedFrame) {
                     _dashing = false;
-                    OnDashingChanged?.Invoke(false);
-                    _currentVerticalSpeed = 0;
-                    _currentHorizontalSpeed *= _dashEndHorizontalMultiplier;
+                    DashingChanged?.Invoke(false, Vector2.zero);
+                    if (_speed.y > 0) _speed.y = 0;
+                    _speed.x *= _stats.DashEndHorizontalMultiplier;
                     if (_grounded) _canDash = true;
+                }
+            }
+
+            _dashToConsume = false;
+        }
+
+        #endregion
+
+        #region Falling
+
+        protected virtual void HandleFall() {
+            if (_dashing) return;
+
+            if (_grounded && _speed.y <= 0) {
+                // Slopes
+                _speed.y = _stats.GroundingForce;
+                _groundNormal = Vector2.zero;
+                for (var i = 0; i < _groundHitCount; i++) {
+                    var hit = _groundHits[i];
+                    if (hit.collider.isTrigger) continue;
+                    _groundNormal = hit.normal;
+
+                    var slopePerp = Vector2.Perpendicular(_groundNormal).normalized;
+                    var slopeAngle = Vector2.Angle(_groundNormal, Vector2.up);
+
+                    if (slopeAngle != 0) {
+                        if (_speed.x == 0) {
+                            _speed.y = 0; // Prevent slipping
+                        }
+                        else {
+                            _speed.y = _speed.x * -slopePerp.y;
+                            _speed.y += _stats.GroundingForce;
+                        }
+
+                        break;
+                    }
+                }
+            }
+            else {
+                if (_isOnWall) {
+                    _speed.y += -_stats.WallFallSpeed * Time.fixedDeltaTime;
+                    if (_speed.y < -_stats.MaxWallFallSpeed) {
+                        _speed.y = -_stats.MaxWallFallSpeed;
+                    }
+
+                    if (_stats.CanClimbWalls && _frameInput.Move.y > 0) {
+                        _speed.y = _stats.WallClimbSpeed;
+                    }
+                }
+
+
+                if (_isOnWall && _rb.velocity.y < 0) {
+                    _speed.y += -_stats.WallFallSpeed * Time.fixedDeltaTime;
+                    if (_speed.y < -_stats.MaxWallFallSpeed) {
+                        _speed.y = -_stats.MaxWallFallSpeed;
+                    }
+                }
+                else {
+                    var fallSpeed = _endedJumpEarly && _speed.y > 0
+                        ? -_stats.FallSpeed * (_stats.JumpEndEarlyGravityModifier * _currentWallJumpMoveMultiplier)
+                        : -_stats.FallSpeed;
+
+                    _speed.y += fallSpeed * Time.fixedDeltaTime;
+                    if (_speed.y < -_stats.MaxFallSpeed) {
+                        _speed.y = -_stats.MaxFallSpeed;
+                    }
                 }
             }
         }
 
         #endregion
 
-        #region Move
-
-        // We cast our bounds before moving to avoid future collisions
-        private void MoveCharacter() {
-            RawMovement = new Vector3(_currentHorizontalSpeed, _currentVerticalSpeed); // Used externally
-            var move = RawMovement * Time.fixedDeltaTime;
-
-            _rb.MovePosition(_rb.position + (Vector2)move);
-
-            RunCornerPrevention();
+        protected virtual void ApplyVelocity() {
+            _rb.velocity = _speed + _currentExternalVelocity;
+            _jumpToConsume = false;
         }
 
-        #region Corner Stuck Prevention
-
-        private Vector2 _lastPos;
-        private bool _cornerStuck;
-
-        // This is a little hacky, but it's very difficult to fix.
-        // This will allow walking and jumping while right on the corner of a ledge.
-        void RunCornerPrevention() {
-            // There's a fiddly thing where the rays will not detect ground (right inline with the collider),
-            // but the collider won't fit. So we detect if we're meant to be moving but not.
-            // The downside to this is if you stand still on a corner and jump straight up, it won't trigger the land
-            // when you touch down. Sucks... but not sure how to go about it at this stage
-            _cornerStuck = !_grounded && _lastPos == _rb.position && _lastJumpPressed + 1 < _fixedFrame;
-            _currentVerticalSpeed = _cornerStuck ? 0 : _currentVerticalSpeed;
-            _lastPos = _rb.position;
+        private void OnDrawGizmos() {
+            if (_stats.ShowWallDetection) {
+                Gizmos.color = Color.white;
+                var bounds = GetWallDetectionBounds();
+                Gizmos.DrawWireCube(bounds.center, bounds.size);
+            }
         }
+    }
 
-        #endregion
-        #endregion
+    public interface IPlayerController {
+        public Vector2 Input { get; }
+        public Vector2 Speed { get; }
+        public bool Crouching { get; }
+        public Vector2 GroundNormal { get; }
+        public ScriptableStats PlayerStats { get; }
+        public int WallDirection { get; }
+
+        public event Action<bool, float> GroundedChanged; // Grounded - Impact force
+        public event Action<bool> WallGrabChanged;
+        public event Action<bool, Vector2> DashingChanged; // Dashing - Dir
+        public event Action Jumped, DoubleJumped;
+        public event Action Attacked;
+
+        public void ApplyVelocity(Vector2 vel, PlayerForce forceType);
+    }
+
+    public enum PlayerForce {
+        /// <summary>
+        /// Added directly to the players movement speed, to be controlled by the standard deceleration
+        /// </summary>
+        Burst,
+
+        /// <summary>
+        /// An additive force handled by the decay system
+        /// </summary>
+        Decay
     }
 }

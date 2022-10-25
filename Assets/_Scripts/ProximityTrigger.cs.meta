@@ -3,9 +3,7 @@ guid: c5c7045f6a7ba374e8d142d2450892e9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - ToggledObject: {fileID: 2832279833990650184, guid: 3e1dbb70d25001542a7503e7c275194d, type: 3}
-  - customImage: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
