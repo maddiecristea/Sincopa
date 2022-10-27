@@ -17,7 +17,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if(other.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetButton("Interact"))
             {
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);             
             }
@@ -28,7 +28,7 @@ public class DialogueTrigger : MonoBehaviour
     public void Update() 
     {      
         var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen();  
-        if (Input.GetKeyDown(KeyCode.E) && isOpen)
+        if (Input.GetButtonDown("Interact") && isOpen)
         {
             Debug.Log("Write only when open?");
             FindObjectOfType<DialogueManager>().DisplayNextSentence();
