@@ -5,7 +5,7 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     private Inventory inventory;
-    [SerializeField] private GameObject ToggledObject;
+    [SerializeField] public GameObject ToggledObject;
 
     private void Start()
     {

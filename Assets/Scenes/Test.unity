@@ -1008,7 +1008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524857830}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.07, y: -0.06, z: -4.1089954}
+  m_LocalPosition: {x: -1.8100001, y: 0.61, z: -4.1089954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1027,7 +1027,6 @@ GameObject:
   - component: {fileID: 587214177}
   - component: {fileID: 587214176}
   - component: {fileID: 587214175}
-  - component: {fileID: 587214174}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1050,19 +1049,6 @@ Transform:
   m_Father: {fileID: 1892312286}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &587214174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587214172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7374630584f2f6541a9506423f7bb9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ToggledObject: {fileID: 0}
 --- !u!61 &587214175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1622,7 +1608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027991948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9332113, y: -2.016236, z: -5.8910046}
+  m_LocalPosition: {x: -4.673211, y: -1.346236, z: -5.8910046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2685,11 +2671,11 @@ PrefabInstance:
       objectReference: {fileID: 967902590}
     - target: {fileID: 8758971902715322057, guid: 6b041815b2f05f94884132d33bb2abea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.26
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8758971902715322057, guid: 6b041815b2f05f94884132d33bb2abea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 1.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b041815b2f05f94884132d33bb2abea, type: 3}
@@ -2720,7 +2706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733863491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.9332113, y: -2.016236, z: -5.8910046}
+  m_LocalPosition: {x: -4.673211, y: -1.346236, z: -5.8910046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
