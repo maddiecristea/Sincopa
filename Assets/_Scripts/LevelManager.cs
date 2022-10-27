@@ -19,6 +19,12 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void Respawn() {
+        StartCoroutine(DelayedRespawn());
+    }
+
+    IEnumerator DelayedRespawn()
+    {
+        yield return new WaitForSeconds(0.3f);
         GameObject player = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
         cam.Follow = player.transform;
     }
