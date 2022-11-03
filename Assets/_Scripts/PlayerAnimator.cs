@@ -21,12 +21,12 @@ namespace TarodevController {
         [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
         [SerializeField] private float _maxParticleFallSpeed = -40;
 
-        private IPlayerController _player;
+        private PlayerController _player;
         private ParticleSystem.MinMaxGradient _currentGradient;
         private Vector2 _movement;
 
         void Awake() {
-            _player = GetComponentInParent<IPlayerController>();
+            _player = GetComponentInParent<PlayerController>();
 
             _player.OnGroundedChanged += OnLanded;
             _player.OnJumping += OnJumping;
@@ -67,7 +67,7 @@ namespace TarodevController {
         [Header("EXTENDED")]
         [SerializeField] private ParticleSystem _doubleJumpParticles;
         [SerializeField] private AudioClip _doubleJumpClip,_dashClip;
-        [SerializeField] private ParticleSystem _dashParticles,_dashRingParticles;
+        [SerializeField] private ParticleSystem _dashParticles,_dashRingParticles, _deathParticles;
         [SerializeField] private Transform _dashRingTransform;
 
         #endregion
@@ -78,8 +78,8 @@ namespace TarodevController {
 
             // Only play particles when grounded (avoid coyote)
             if (_player.Grounded) {
-                SetColor(_jumpParticles);
-                SetColor(_launchParticles);
+                //SetColor(_jumpParticles);
+                //SetColor(_launchParticles);
                 _jumpParticles.Play();
             }
         }
@@ -91,13 +91,18 @@ namespace TarodevController {
                 _anim.SetTrigger(GroundedKey);
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
                 _moveParticles.Play();
-                _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
-                SetColor(_landParticles);
+                //_landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
+                //SetColor(_landParticles);
                 _landParticles.Play();
             }
             else {
                 _moveParticles.Stop();
             }
+        }
+
+        public void OnDeath() {
+            _anim.SetTrigger("Dead"); 
+            _deathParticles.Play();
         }
 
         void Update() {
@@ -110,15 +115,15 @@ namespace TarodevController {
            // var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
             //_anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
 
-            // Speed up idle while running
+            //Speed up idle while running
             //_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
             
             // Detect ground color
-            var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
-                _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
-                SetColor(_moveParticles);
-            }
+            //var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
+            //if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
+                //_currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
+                //SetColor(_moveParticles);
+            //}
 
             _movement = _player.RawMovement; // Previous frame movement is more valuable
         }
@@ -131,15 +136,16 @@ namespace TarodevController {
             _moveParticles.Play();
         }
 
-        void SetColor(ParticleSystem ps) {
-            var main = ps.main;
-            main.startColor = _currentGradient;
-        }
+        //void SetColor(ParticleSystem ps) {
+        //    var main = ps.main;
+        //    main.startColor = _currentGradient;
+        //}
 
         #region Animation Keys
 
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
         private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
+        private static readonly int SpeedKey = Animator.StringToHash("Speed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
         private static readonly int DashKey = Animator.StringToHash("Dash");
 

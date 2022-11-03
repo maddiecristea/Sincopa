@@ -15,7 +15,7 @@ H:/Miron Git/Panopticon
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-59474
+62115
 Successfully changed project path to: H:/Miron Git/Panopticon
 H:/Miron Git/Panopticon
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ H:/Miron Git/Panopticon
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 31.33 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 36.34 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.7f1 (6bd9e232123f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Resources/UnitySubsystems
@@ -63,73 +63,73 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003530 seconds.
+Registered in 0.004340 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 30.51 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 39.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.401 seconds
+- Completed reload, in  0.475 seconds
 Domain Reload Profiling:
-	ReloadAssembly (402ms)
-		BeginReloadAssembly (52ms)
+	ReloadAssembly (476ms)
+		BeginReloadAssembly (60ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (297ms)
-			LoadAssemblies (50ms)
+		EndReloadAssembly (357ms)
+			LoadAssemblies (58ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (69ms)
+			SetupTypeCache (85ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (17ms)
-			SetupLoadedEditorAssemblies (175ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (208ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (12ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (31ms)
+				RefreshPlugins (39ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (101ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
+				ProcessInitializeOnLoadAttributes (119ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004223 seconds.
+Registered in 0.004115 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 29.84 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 33.80 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.015 seconds
+- Completed reload, in  1.178 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1016ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (1179ms)
+		BeginReloadAssembly (91ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (15ms)
-		EndReloadAssembly (866ms)
-			LoadAssemblies (63ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1005ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (125ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (618ms)
+			SetupTypeCache (159ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (704ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (30ms)
-				BeforeProcessingInitializeOnLoad (43ms)
-				ProcessInitializeOnLoadAttributes (507ms)
-				ProcessInitializeOnLoadMethodAttributes (24ms)
+				RefreshPlugins (34ms)
+				BeforeProcessingInitializeOnLoad (52ms)
+				ProcessInitializeOnLoadAttributes (574ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -138,12 +138,228 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2520 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 47 unused Assets / (128.6 KB). Loaded Objects now: 2981.
-Memory consumption went from 114.5 MB to 114.4 MB.
-Total: 2.736800 ms (FindLiveObjects: 0.138100 ms CreateObjectMapping: 0.068000 ms MarkObjects: 2.469200 ms  DeleteObjects: 0.060900 ms)
+Unloading 2524 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 46 unused Assets / (129.0 KB). Loaded Objects now: 2987.
+Memory consumption went from 114.7 MB to 114.6 MB.
+Total: 2.839300 ms (FindLiveObjects: 0.174000 ms CreateObjectMapping: 0.090800 ms MarkObjects: 2.504100 ms  DeleteObjects: 0.069800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003601 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.742 seconds
+Domain Reload Profiling:
+	ReloadAssembly (743ms)
+		BeginReloadAssembly (92ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (586ms)
+			LoadAssemblies (57ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (119ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (347ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (260ms)
+				ProcessInitializeOnLoadMethodAttributes (25ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.57 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2500 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (95.3 KB). Loaded Objects now: 3003.
+Memory consumption went from 112.8 MB to 112.7 MB.
+Total: 3.366800 ms (FindLiveObjects: 0.178900 ms CreateObjectMapping: 0.101500 ms MarkObjects: 3.059100 ms  DeleteObjects: 0.026400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004721 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.770 seconds
+Domain Reload Profiling:
+	ReloadAssembly (771ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (603ms)
+			LoadAssemblies (59ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (117ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (356ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (44ms)
+				ProcessInitializeOnLoadAttributes (267ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2499 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (95.4 KB). Loaded Objects now: 3018.
+Memory consumption went from 112.8 MB to 112.7 MB.
+Total: 2.948600 ms (FindLiveObjects: 0.168300 ms CreateObjectMapping: 0.114300 ms MarkObjects: 2.640500 ms  DeleteObjects: 0.024800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004068 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.744 seconds
+Domain Reload Profiling:
+	ReloadAssembly (744ms)
+		BeginReloadAssembly (94ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (588ms)
+			LoadAssemblies (60ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (118ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (347ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (258ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2499 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (95.3 KB). Loaded Objects now: 3033.
+Memory consumption went from 112.9 MB to 112.8 MB.
+Total: 2.964100 ms (FindLiveObjects: 0.174200 ms CreateObjectMapping: 0.080900 ms MarkObjects: 2.682400 ms  DeleteObjects: 0.026100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003685 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.748 seconds
+Domain Reload Profiling:
+	ReloadAssembly (749ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (584ms)
+			LoadAssemblies (59ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (128ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (338ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (43ms)
+				ProcessInitializeOnLoadAttributes (252ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2499 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (95.3 KB). Loaded Objects now: 3048.
+Memory consumption went from 112.9 MB to 112.8 MB.
+Total: 3.282700 ms (FindLiveObjects: 0.221600 ms CreateObjectMapping: 0.180600 ms MarkObjects: 2.854400 ms  DeleteObjects: 0.025600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -157,1837 +373,88 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 755440.284222 seconds.
-  path: Assets/Scenes/Test.unity
-  artifactKey: Guid(6cdecf4f463d4cb4893268a25ab37130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Test.unity using Guid(6cdecf4f463d4cb4893268a25ab37130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51047a7e9fab87a5c2137819913f0b10') in 0.013282 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 89.343198 seconds.
-  path: Assets/Traumatism_tileset_cut_0.controller
-  artifactKey: Guid(9e291c3755e140146bd30e9494cabab9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Traumatism_tileset_cut_0.controller using Guid(9e291c3755e140146bd30e9494cabab9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e80731a8a4a44ec7188c5c7c404bb153') in 0.063970 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_53.asset
-  artifactKey: Guid(f47cc05d7deb48a4cb8ce25dd4e5b98d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_53.asset using Guid(f47cc05d7deb48a4cb8ce25dd4e5b98d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a3e725d3af0664fb4c21a1c93149d45e') in 0.014358 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Circle.png
-  artifactKey: Guid(8620bcf7fa769e94fa548c2fc0325ef4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Circle.png using Guid(8620bcf7fa769e94fa548c2fc0325ef4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a726aff3ceb4da60d34a8c9a01be3413') in 0.030566 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_3.asset
-  artifactKey: Guid(d68873d7589c37c4fa4307c5d4a29676) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_3.asset using Guid(d68873d7589c37c4fa4307c5d4a29676) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '97656069aefbe91f54e581acda3f4d98') in 0.008832 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_20.asset
-  artifactKey: Guid(276084ffcbd1ad548b75efe555b7530f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_20.asset using Guid(276084ffcbd1ad548b75efe555b7530f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '696fd5ad1531985205c168007ca1dd99') in 0.008244 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Audio/death poof.wav
-  artifactKey: Guid(0f1c1f591b057424fbc638a961326e5c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Audio/death poof.wav using Guid(0f1c1f591b057424fbc638a961326e5c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5558e3b8b98edce6a41058aa62092202') in 0.008198 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_45.asset
-  artifactKey: Guid(6c54ba7639c62134398942b097356da5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_45.asset using Guid(6c54ba7639c62134398942b097356da5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c8c7abe9c5b7c0f5593d480177696a57') in 0.008707 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_56.asset
-  artifactKey: Guid(83f3c4a9f5599a14292740e4c27c686e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_56.asset using Guid(83f3c4a9f5599a14292740e4c27c686e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c810948800c342191a7ba5e75966e652') in 0.009816 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_16.asset
-  artifactKey: Guid(f248f137f501364439930f23d9ac89f5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_16.asset using Guid(f248f137f501364439930f23d9ac89f5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '41477da4b77caea4c945503de0259f14') in 0.010051 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Lighting/PipelineAsset.asset
-  artifactKey: Guid(2ac509071dd30df499c98118a831370a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Lighting/PipelineAsset.asset using Guid(2ac509071dd30df499c98118a831370a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'b6e1f567c26f76ee978f8107d9139389') in 0.005092 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_0.asset
-  artifactKey: Guid(031420077ae2cf3469e94579c97daaef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_0.asset using Guid(031420077ae2cf3469e94579c97daaef) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9c225d8775caa3885ae73ad39995217c') in 0.006847 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_60.asset
-  artifactKey: Guid(65999f6a65dffe6448d734e8cf4eb8fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_60.asset using Guid(65999f6a65dffe6448d734e8cf4eb8fa) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '6e51c457a03817a0969d41ef256846d0') in 0.009540 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_15.asset
-  artifactKey: Guid(be5ba0c006693ee4c800f6febcb3320c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_15.asset using Guid(be5ba0c006693ee4c800f6febcb3320c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'b535f18c889ad59ea195669a96165ee0') in 0.007906 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Animation/DialogueBox.controller
-  artifactKey: Guid(97b325f7b1a865f4da3a2a886b2e8a91) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/DialogueBox.controller using Guid(97b325f7b1a865f4da3a2a886b2e8a91) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ddf8aee82f34043dbade2daafa59bf2e') in 0.005209 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_33.asset
-  artifactKey: Guid(0b7ab110a49fd8a47a42653b34a7ff6f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_33.asset using Guid(0b7ab110a49fd8a47a42653b34a7ff6f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ef8cab6e1bf6ef80a708eac7c0a134ec') in 0.008671 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_31.asset
-  artifactKey: Guid(c788f338e3e15a143ad299561fab9164) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_31.asset using Guid(c788f338e3e15a143ad299561fab9164) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c8aeaae054c42f91e8fac75ee1e3e858') in 0.007599 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Fonts/Pixeled.ttf
-  artifactKey: Guid(1172c795a6b609945abe4ea580920fdd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Fonts/Pixeled.ttf using Guid(1172c795a6b609945abe4ea580920fdd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c86a0f55d80310ded2b12d76257eff48') in 0.015274 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Audio/Splat 1.wav
-  artifactKey: Guid(5d94063f45167b04ab62585e436da58c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Audio/Splat 1.wav using Guid(5d94063f45167b04ab62585e436da58c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cfc0d1c65f10648bafb6f8661eb2e759') in 0.005458 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
+  Time since last request: 287662.463669 seconds.
   path: Assets/Lighting/PipelineAsset_Renderer.asset
-  artifactKey: Guid(c9b3989ca63f8b34da456c766fa0d211) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Lighting/PipelineAsset_Renderer.asset using Guid(c9b3989ca63f8b34da456c766fa0d211) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '99c52e2b0c80e8a1dbd287a27b70e916') in 0.006255 seconds 
+  artifactKey: Guid(c9b3989ca63f8b34da456c766fa0d211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lighting/PipelineAsset_Renderer.asset using Guid(c9b3989ca63f8b34da456c766fa0d211) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d3bfd4a9c195d9a8a532204a6ff236') in 0.023543 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Animation/Dash.anim
-  artifactKey: Guid(6b9da034155355d428b9224187783ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Dash.anim using Guid(6b9da034155355d428b9224187783ff8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5c09b75f40dada44c0b54b4f1b4f642c') in 0.006877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '415ac102dafe6db344d8faa2e71369b1') in 0.006273 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_23.asset
-  artifactKey: Guid(69aa7bb67daf5bb46937263e3ab7b348) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_23.asset using Guid(69aa7bb67daf5bb46937263e3ab7b348) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a94b2444335c37c9d08836ee813e010d') in 0.007910 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/key.png
-  artifactKey: Guid(32345120b4667ad4fab069a46bfd769b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/key.png using Guid(32345120b4667ad4fab069a46bfd769b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'd2bf9292e437d63e2b469ca139fba220') in 0.006110 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Animation/DialogueBox_close.anim
-  artifactKey: Guid(131a74c056d748142aa88c886e6efd50) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/DialogueBox_close.anim using Guid(131a74c056d748142aa88c886e6efd50) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'bc124f669998d64dfac132e8f2323bfd') in 0.006727 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_47.asset
-  artifactKey: Guid(473090bd678dd3342a7dbed0813948e3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_47.asset using Guid(473090bd678dd3342a7dbed0813948e3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ce9050d382507c7ee37f78339df0e548') in 0.010835 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Animation/Sentences.controller
-  artifactKey: Guid(3c8e2f358f2220e40a7bc9c6d38d6bf6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Sentences.controller using Guid(3c8e2f358f2220e40a7bc9c6d38d6bf6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ebe605bce329dfb9ca0b5fa5a815ca3e') in 0.005864 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_17.asset
-  artifactKey: Guid(67b26ff728a1f6349bda17672533749a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_17.asset using Guid(67b26ff728a1f6349bda17672533749a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '795ca1778973ee525e3d9718afdb7ee9') in 0.007980 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_51.asset
-  artifactKey: Guid(ea2fa37222460894ca260bee3ccdb035) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_51.asset using Guid(ea2fa37222460894ca260bee3ccdb035) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '80ae7d7a61a2b12403f944651c7a3998') in 0.007942 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Animation/Walk.anim
-  artifactKey: Guid(efe91583c8b2e3f4aa0ad99d1ba77f0c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Walk.anim using Guid(efe91583c8b2e3f4aa0ad99d1ba77f0c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3b2ae8ed74278b3a59bf1777219be89f') in 0.005221 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_2.asset
-  artifactKey: Guid(88095f54d5be65247adf095ce5015df5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_2.asset using Guid(88095f54d5be65247adf095ce5015df5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3099862aa0fd53a7b1fa899a02d7006b') in 0.008081 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_5.asset
-  artifactKey: Guid(0b4b6c6484b61a54f8f6341768869d13) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_5.asset using Guid(0b4b6c6484b61a54f8f6341768869d13) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f9584526c5804f76bf5da2951fc46b68') in 0.007669 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Prefabs/Player 1.prefab
-  artifactKey: Guid(6b041815b2f05f94884132d33bb2abea) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Prefabs/Player 1.prefab using Guid(6b041815b2f05f94884132d33bb2abea) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cca6d6c944e43520975936363909d0b3') in 0.014266 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_4.asset
-  artifactKey: Guid(ecf8f21ffacb09f4d8986b9a46010117) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_4.asset using Guid(ecf8f21ffacb09f4d8986b9a46010117) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4fd9133fbdb133b31bb0b2666942a825') in 0.006035 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_61.asset
-  artifactKey: Guid(100ea18c190b759409913c73c4c30da7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_61.asset using Guid(100ea18c190b759409913c73c4c30da7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '84f1df26cae322497f09274aa4ccb4c3') in 0.008669 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Audio/Splat 3.wav
-  artifactKey: Guid(1876767bf7cbf284394dc3817af9593c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Audio/Splat 3.wav using Guid(1876767bf7cbf284394dc3817af9593c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8f56b376de371e8f51ceab6837a7586e') in 0.005128 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_40.asset
-  artifactKey: Guid(a79fa27288dac07408b6656d3ad41bbb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_40.asset using Guid(a79fa27288dac07408b6656d3ad41bbb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5f2000eab599bb1012b1a119cff6e7d3') in 0.009149 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_54.asset
-  artifactKey: Guid(8002ddfbe96e0c947b7a19193dd5e4ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_54.asset using Guid(8002ddfbe96e0c947b7a19193dd5e4ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e08e0053ba1a607ef277fb37ee52e4e3') in 0.009047 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Animation/Visual.controller
-  artifactKey: Guid(6e5b5f4662f713845b0c28185c4ea62c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Visual.controller using Guid(6e5b5f4662f713845b0c28185c4ea62c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7b493830804a6305a6f27f31c6413093') in 0.004826 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_1.asset
-  artifactKey: Guid(fe711ccdc0374774583421af3c3e2466) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_1.asset using Guid(fe711ccdc0374774583421af3c3e2466) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1370d9afae953da14ea2c90277a41a26') in 0.008269 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_11.asset
-  artifactKey: Guid(f27f30cab0b3c034386fbf4241cc4cb7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_11.asset using Guid(f27f30cab0b3c034386fbf4241cc4cb7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '99e23f8ad7f0a76fb726c46c12b7c7f1') in 0.009021 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
+  Time since last request: 1.209783 seconds.
   path: Assets/Audio/Splat 2.wav
-  artifactKey: Guid(b5803c17557c59c40bf3a6d69cb46cb3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Audio/Splat 2.wav using Guid(b5803c17557c59c40bf3a6d69cb46cb3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5906c54fd2177c53d515e4c5b8e805b8') in 0.004645 seconds 
+  artifactKey: Guid(b5803c17557c59c40bf3a6d69cb46cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/Splat 2.wav using Guid(b5803c17557c59c40bf3a6d69cb46cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2f5586968a229a6c08c254de9b61f3b') in 0.078195 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMPro.cginc
-  artifactKey: Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMPro.cginc using Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a43510e4add5b1f8d8cbdce77f20734f') in 0.006151 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/v1_traumatism_o.asset
-  artifactKey: Guid(9d16fb85f7c2ab449a5f5be6c0f25d6f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/v1_traumatism_o.asset using Guid(9d16fb85f7c2ab449a5f5be6c0f25d6f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '136849f46e2ea21c5f67081b5c2a0f3c') in 0.006726 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_68.asset
-  artifactKey: Guid(44fff7d91e5e51c478b198659269c63c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_68.asset using Guid(44fff7d91e5e51c478b198659269c63c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '62e48bcff9ef89408e02cd9329ae2785') in 0.008369 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Animation/Fade Panels/Panel.controller
-  artifactKey: Guid(c6586593739362b468d737dbcb5c02e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Fade Panels/Panel.controller using Guid(c6586593739362b468d737dbcb5c02e1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8367b35014a70b2857d6ab662a8573a6') in 0.005025 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
-  artifactKey: Guid(3997e2241185407d80309a82f9148466) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc using Guid(3997e2241185407d80309a82f9148466) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '06eb85b038781b41a366ac797a5411e3') in 0.004783 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/_Scripts/UseItemScript.cs
-  artifactKey: Guid(10d000a86d3cb7b469fb4f699eb9cfda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/UseItemScript.cs using Guid(10d000a86d3cb7b469fb4f699eb9cfda) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '061929f6a2d2bc0502d51de6b3729bbf') in 0.007128 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_8.asset
-  artifactKey: Guid(e221a20147dbc344992e2854bd7f55e0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_8.asset using Guid(e221a20147dbc344992e2854bd7f55e0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '29656c2fa4c285245e0ea9c3cd86335d') in 0.009169 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_67.asset
-  artifactKey: Guid(b69fa444403af174797de29954d20531) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_67.asset using Guid(b69fa444403af174797de29954d20531) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a39c21b20129190e0d290c656eab20d9') in 0.007943 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/_Scripts/DialogueTrigger.cs
-  artifactKey: Guid(e07c259c90d56bf47a34494fd0afce97) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/DialogueTrigger.cs using Guid(e07c259c90d56bf47a34494fd0afce97) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e8ec21c790d7497683fb5a79c4cb6973') in 0.005396 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
-  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2f3d10ca5d5a74c50618b387e87d4802') in 0.005335 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
-  artifactKey: Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader using Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '45ea26d49ff0d9df4e1e33458fce27a3') in 0.007445 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/_Scripts/Inventory.cs
-  artifactKey: Guid(5c5f550656930a94a98665093d0f0cb7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/Inventory.cs using Guid(5c5f550656930a94a98665093d0f0cb7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '445eb4674e7e85bcdd80599ffa06ac38') in 0.004959 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/_Scripts/PlayerDeath.cs
-  artifactKey: Guid(0153eec4f5f93434b8631336622fc9f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/PlayerDeath.cs using Guid(0153eec4f5f93434b8631336622fc9f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '17f375ceeba77c8263144e7f6f0f2b11') in 0.004533 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/UI/inventoryUI.png
-  artifactKey: Guid(47b0bfede909e9048837db539b1c31f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/UI/inventoryUI.png using Guid(47b0bfede909e9048837db539b1c31f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a632b89d647ce317e52a42df2abbe294') in 0.006148 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/_Scripts/OpenDoor.cs
-  artifactKey: Guid(7374630584f2f6541a9506423f7bb9a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/OpenDoor.cs using Guid(7374630584f2f6541a9506423f7bb9a4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5e55d36dc4f8611e2fd34d993f24101d') in 0.005301 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/Player/dash.png
-  artifactKey: Guid(8ae26af37de745e4b888a375641d8919) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Player/dash.png using Guid(8ae26af37de745e4b888a375641d8919) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a0abfbdd6c1dd7073ad80b013bed61ef') in 0.006457 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
-  artifactKey: Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader using Guid(a02a7d8c237544f1962732b55a9aebf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'df20b21deaf3634d64f95d11328ef41d') in 0.005287 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
-  artifactKey: Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt using Guid(d82c1b31c7e74239bff1220585707d2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ef6b62eb8715151775bcc9bf579ac5d3') in 0.015551 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_69.asset
-  artifactKey: Guid(01f7972acd9b44c459c3c9dcd01d4688) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_69.asset using Guid(01f7972acd9b44c459c3c9dcd01d4688) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e5f83157a2df532ec03a5c2d0313a7f4') in 0.008528 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/Player/idle.png
-  artifactKey: Guid(cdf71007668f0a54eadf0e93f9aeec8b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Player/idle.png using Guid(cdf71007668f0a54eadf0e93f9aeec8b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '018cd38311c54edaa3940cf21b5c90dd') in 0.008023 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_7.asset
-  artifactKey: Guid(c099bb7d9b38b8243a5e723c8684cadd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_7.asset using Guid(c099bb7d9b38b8243a5e723c8684cadd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7c50b19d34fa2b9dc3e631b7642de066') in 0.008522 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/_Scripts/ParallaxBackground.cs
-  artifactKey: Guid(4ecf2ca0d0506a24d8e9df557fca2440) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/ParallaxBackground.cs using Guid(4ecf2ca0d0506a24d8e9df557fca2440) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '39978fbc24691b603aefc7a5fa8962cd') in 0.005318 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/_Scripts/PlayerExtras.cs
-  artifactKey: Guid(dfcc706deb7a99043ab47acbb172aed7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/PlayerExtras.cs using Guid(dfcc706deb7a99043ab47acbb172aed7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4a69d2f3090498bc1dc7bf9ad8784dbf') in 0.004947 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/TextMesh Pro/Sprites/EmojiOne.png
-  artifactKey: Guid(dffef66376be4fa480fb02b19edbe903) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Sprites/EmojiOne.png using Guid(dffef66376be4fa480fb02b19edbe903) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2df0d12d31f3827bef69d3875704435b') in 0.006030 seconds 
+  Time since last request: 50.273991 seconds.
+  path: Assets/Sprites/key.png
+  artifactKey: Guid(32345120b4667ad4fab069a46bfd769b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/key.png using Guid(32345120b4667ad4fab069a46bfd769b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '739ab386784980b2f02db36f1eb309a1') in 0.041275 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/_Scripts/MoveScenes2D.cs
-  artifactKey: Guid(17cedc543f1b7ad4b8f8719e6e5c55e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/MoveScenes2D.cs using Guid(17cedc543f1b7ad4b8f8719e6e5c55e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f79505436b3d9994c9ca0801c6415dfd') in 0.006794 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Sprites/Player/jump.png
-  artifactKey: Guid(7a056dc83f1a50648959ca4d56bd0a9a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Player/jump.png using Guid(7a056dc83f1a50648959ca4d56bd0a9a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dfce5b667aa47ef330e60b6a52421edd') in 0.007736 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/_Scripts/PlayerController.cs
-  artifactKey: Guid(0fe5bc01186854c47911e2ac6f4d9b9b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/PlayerController.cs using Guid(0fe5bc01186854c47911e2ac6f4d9b9b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3aeb3a77cfdda94a697de3f554a10da3') in 0.006252 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Sprites/Player/land.png
-  artifactKey: Guid(536a720b1a8427d4f899f948fbb32dc9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Player/land.png using Guid(536a720b1a8427d4f899f948fbb32dc9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '90bf43a223a7ad626125e9d83b3646f4') in 0.007771 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/_Scripts/Dialogue.cs
-  artifactKey: Guid(2bbe0d5cde4278a429a9a5ac8e5a5f26) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/Dialogue.cs using Guid(2bbe0d5cde4278a429a9a5ac8e5a5f26) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '19c26a18c0ee8278c7841306f3eef86b') in 0.005337 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Traumatism_v1.prefab
-  artifactKey: Guid(d6d5b82f8c0d57d41ab7f85317f3cdee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Traumatism_v1.prefab using Guid(d6d5b82f8c0d57d41ab7f85317f3cdee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8f6b228183d21b17b4d565f32ee3e20f') in 0.053575 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_41.asset
-  artifactKey: Guid(e2c52350b76074b4f92cff9b7c5b6190) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_41.asset using Guid(e2c52350b76074b4f92cff9b7c5b6190) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9072111b65f0de1913370477d4a01191') in 0.008888 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Prefabs/KeyObj.prefab
-  artifactKey: Guid(ffdee539a6164544d9794c84d643e9dd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Prefabs/KeyObj.prefab using Guid(ffdee539a6164544d9794c84d643e9dd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2c312c3774862ded26728e460a19a3df') in 0.009625 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_46.asset
-  artifactKey: Guid(d3cebf6201a2a4648be92b108d541e31) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_46.asset using Guid(d3cebf6201a2a4648be92b108d541e31) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '93b742ed5e390a394c3472ac4f572d33') in 0.009160 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_65.asset
-  artifactKey: Guid(5699b6a7bc941e643b4ed4a8c1b32e72) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_65.asset using Guid(5699b6a7bc941e643b4ed4a8c1b32e72) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '84da0bd1a0da2fa0106757c02f740ccf') in 0.009494 seconds 
+  path: Assets/Sprites/Player.png
+  artifactKey: Guid(9ec0ca269ec0b4f4fa12877c83d9dd88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player.png using Guid(9ec0ca269ec0b4f4fa12877c83d9dd88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3689fe449ce72232122a88dd8aecf0d') in 0.032788 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000014 seconds.
-  path: Assets/_Scripts/ProximityTrigger.cs
-  artifactKey: Guid(c5c7045f6a7ba374e8d142d2450892e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/ProximityTrigger.cs using Guid(c5c7045f6a7ba374e8d142d2450892e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a42db9837ac43d23c7a4bab1001b98a2') in 0.005083 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
-  artifactKey: Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMP_Sprite.shader using Guid(cf81c85f95fe47e1a27f6ae460cf182c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'bd19531839cb5786a85fc937c3802fdc') in 0.005276 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_34.asset
-  artifactKey: Guid(22d09de1850e0f84f8d23e6c2c487878) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_34.asset using Guid(22d09de1850e0f84f8d23e6c2c487878) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1d6a7ecb677b76ebb40db2a17be8e9ee') in 0.008797 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/New Rule Tile.asset
-  artifactKey: Guid(184029972044e4e4e97332be8ffa924e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/New Rule Tile.asset using Guid(184029972044e4e4e97332be8ffa924e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dd6063866ea48df91494a63a777ecc86') in 0.005577 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_48.asset
-  artifactKey: Guid(cf65a1a24cf96884e8895f47729573d5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_48.asset using Guid(cf65a1a24cf96884e8895f47729573d5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '43fc709bd56917f1f700a9ba045f4ab5') in 0.007804 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Prefabs/Transitions/FadeFromBlack.prefab
-  artifactKey: Guid(6748b67021c20f6458e248293ee3c646) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Prefabs/Transitions/FadeFromBlack.prefab using Guid(6748b67021c20f6458e248293ee3c646) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '26fb323a6a53009c4217d0090fa0afaa') in 0.006364 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
-  artifactKey: Guid(c8d12adcee749c344b8117cf7c7eb912) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader using Guid(c8d12adcee749c344b8117cf7c7eb912) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3994bd3f4e75b159cb4977942069291e') in 0.005212 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Animation/Fade Panels/Fade To Black.anim
-  artifactKey: Guid(6978312585681734ea340c5fd3eda328) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Fade Panels/Fade To Black.anim using Guid(6978312585681734ea340c5fd3eda328) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c1c8d8fc1f67d2a0e94c51374007aaff') in 0.005097 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Materials/Trail.mat
-  artifactKey: Guid(e838edadfae42f04ea5f2d8dcd7641af) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Materials/Trail.mat using Guid(e838edadfae42f04ea5f2d8dcd7641af) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '522f9f9d9bcbf0a1df020342a4469148') in 0.010289 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/Tilemap/Traumatism_tileset_cut.png
-  artifactKey: Guid(a9c0bfe7a91b81c49bff9001721d03d4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/Tilemap/Traumatism_tileset_cut.png using Guid(a9c0bfe7a91b81c49bff9001721d03d4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9df1744d5b38cfc6f5d9d6352141c48e') in 0.034100 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_104.asset
-  artifactKey: Guid(6cc024c3e04575644bdfedc633ea8be8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_104.asset using Guid(6cc024c3e04575644bdfedc633ea8be8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '96dd8e2d8de5914aa920d1d6668c358d') in 0.005723 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_124.asset
-  artifactKey: Guid(4fdb5cdde9ac47b4db504bb8683a89d8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_124.asset using Guid(4fdb5cdde9ac47b4db504bb8683a89d8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '18161a23a21379460598cde75a1fd229') in 0.005851 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_53.asset
-  artifactKey: Guid(8681b4e0842dd654f8943edbda05704c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_53.asset using Guid(8681b4e0842dd654f8943edbda05704c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '59e0034481a6d97c3e3830edfcc8cf57') in 0.005309 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_49.asset
-  artifactKey: Guid(7a098f78f980253459077ed608f5c08e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_49.asset using Guid(7a098f78f980253459077ed608f5c08e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '90b390deb18cde90bb335358e80ece6b') in 0.004518 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_38.asset
-  artifactKey: Guid(caef31dc0e824a046806f83ebb7e22d2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_38.asset using Guid(caef31dc0e824a046806f83ebb7e22d2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'fe68c11c8f48d546e444d4281f725e9e') in 0.005247 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_56.asset
-  artifactKey: Guid(649fcaa8ac487ca4d926b19ddd5381e5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_56.asset using Guid(649fcaa8ac487ca4d926b19ddd5381e5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '12794603c1db6d4bdfb05ccd93c5ab04') in 0.004294 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_37.asset
-  artifactKey: Guid(a16d37f52bd40ba4a823167c0aad9be0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_37.asset using Guid(a16d37f52bd40ba4a823167c0aad9be0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '382a3c3078e9d239efbf33b487e5304e') in 0.005478 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_20.asset
-  artifactKey: Guid(4ca69819a85521448b032c3bd0e22626) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_20.asset using Guid(4ca69819a85521448b032c3bd0e22626) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2d16f95518b05782a07a9bad9a1194e9') in 0.005209 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_50.asset
-  artifactKey: Guid(6901b18eb9f5f664a996ca3a5647ac74) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_50.asset using Guid(6901b18eb9f5f664a996ca3a5647ac74) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'fb537a8870ceef00ba6d28ded681c7ae') in 0.005441 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_59.asset
-  artifactKey: Guid(b67576a302a04b54b9eb84072ef0c91c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_59.asset using Guid(b67576a302a04b54b9eb84072ef0c91c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '44c5dc55988cec0c99f039e0c817fb34') in 0.005875 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_10.asset
-  artifactKey: Guid(3a085bfd2cc8d474aa280e6f37ef4e03) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_10.asset using Guid(3a085bfd2cc8d474aa280e6f37ef4e03) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'd34cc146bd84f658d19f76dc38a522d6') in 0.005417 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_6.asset
-  artifactKey: Guid(c6c48a4021a69ea40987afa64b1c8fd1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_6.asset using Guid(c6c48a4021a69ea40987afa64b1c8fd1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2022994fb8044019bdf70f8d62c4dd9d') in 0.005565 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_122.asset
-  artifactKey: Guid(1845764fcba259e488c27ae6563080c6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_122.asset using Guid(1845764fcba259e488c27ae6563080c6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '74173b51ab83805d3dc7ee4d62bbe96b') in 0.005914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_31.asset
-  artifactKey: Guid(96d5b8363124de94fb3a6314dabc2f2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_31.asset using Guid(96d5b8363124de94fb3a6314dabc2f2b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c652e389cbd1f670300a0da961466fad') in 0.005557 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_61.asset
-  artifactKey: Guid(c158f6a8f28bf4f4684e2de8a4471019) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_61.asset using Guid(c158f6a8f28bf4f4684e2de8a4471019) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1ca17d3a24013c4d8522dba605066bd4') in 0.004188 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_17.asset
-  artifactKey: Guid(c33bbaf3db9ce1f4491d42cb0d3d6658) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_17.asset using Guid(c33bbaf3db9ce1f4491d42cb0d3d6658) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e56d49f1f258f645da3dc1cd3fc75eb3') in 0.005909 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_60.asset
-  artifactKey: Guid(21c3f6d984f786140a521aec1fb98e6c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_60.asset using Guid(21c3f6d984f786140a521aec1fb98e6c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1fa1ffe0db11009dc77285ce43718ee5') in 0.004886 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_118.asset
-  artifactKey: Guid(6450ac03505cbe14ebcdc04ad9d35d48) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_118.asset using Guid(6450ac03505cbe14ebcdc04ad9d35d48) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ac3786a741fa3522b4e912c558258388') in 0.005677 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_0.asset
-  artifactKey: Guid(6ca0949632b816a47950081a89edeaa3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_0.asset using Guid(6ca0949632b816a47950081a89edeaa3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '59a099cd9eaea5fd162ba08409bff436') in 0.005091 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_43.asset
-  artifactKey: Guid(fb084becf5c242545806f2f0c5b9a70d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_43.asset using Guid(fb084becf5c242545806f2f0c5b9a70d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'b11594c9ea5f14dbbee4914085464e82') in 0.005714 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_115.asset
-  artifactKey: Guid(a0e7ef43d1a4fab4397e704e1a0afbd1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_115.asset using Guid(a0e7ef43d1a4fab4397e704e1a0afbd1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a6ca62f6ee9250b963b6e64fd8fe128c') in 0.005532 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_109.asset
-  artifactKey: Guid(c7a55018a4647bd4ba6095aa0be1859a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_109.asset using Guid(c7a55018a4647bd4ba6095aa0be1859a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3691b38aa72217cdc8bb34780daab800') in 0.006134 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_44.asset
-  artifactKey: Guid(852f5818e19296a42808de7fafee9c9e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_44.asset using Guid(852f5818e19296a42808de7fafee9c9e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '21794e12c7c4ac5a591ade457681b7b9') in 0.005300 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_35.asset
-  artifactKey: Guid(f2943df772680ad40ba825bf40369c94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_35.asset using Guid(f2943df772680ad40ba825bf40369c94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '29beb02d47582ddd9366da2b7e8970a5') in 0.005372 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_119.asset
-  artifactKey: Guid(a428721cb5b002a4f980837a65e2b99b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_119.asset using Guid(a428721cb5b002a4f980837a65e2b99b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f18611ff44c34c55fa6de49ceb2b7649') in 0.005899 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_102.asset
-  artifactKey: Guid(90d910620cc11e045b0e557408aa82d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_102.asset using Guid(90d910620cc11e045b0e557408aa82d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f96fb05ae7cbf0b8bc4df9c026cecd18') in 0.006054 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_19.asset
-  artifactKey: Guid(2de6eb0cbdc83764993a54f54f08dd6c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_19.asset using Guid(2de6eb0cbdc83764993a54f54f08dd6c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9d622e6ef12cafd1e362f5c0576e9db2') in 0.005512 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_120.asset
-  artifactKey: Guid(71c21ebd71c3af842a5a85b2d83e1545) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_120.asset using Guid(71c21ebd71c3af842a5a85b2d83e1545) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '87312da4c26abba55eb408c05fa61690') in 0.006639 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_34.asset
-  artifactKey: Guid(794d19424cd5661408f1c24285d1aa5e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_34.asset using Guid(794d19424cd5661408f1c24285d1aa5e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '36e20ac426ce67768f3d43ea4c3d909c') in 0.005631 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_106.asset
-  artifactKey: Guid(f22d85e53770d834eb54ebdb79055e20) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_106.asset using Guid(f22d85e53770d834eb54ebdb79055e20) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dfca90e502364fd572d2478cda470256') in 0.005617 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_54.asset
-  artifactKey: Guid(fedd5ce11ae89224bbf4fee2bb41490f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_54.asset using Guid(fedd5ce11ae89224bbf4fee2bb41490f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '02ff03d07e7c79d288df40d14d1c8879') in 0.005093 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_128.asset
-  artifactKey: Guid(e58a2c2b8129bfd4d833f20fcef4e0e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_128.asset using Guid(e58a2c2b8129bfd4d833f20fcef4e0e9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e264d110d27da36da21b91c27c0e8607') in 0.005749 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_55.asset
-  artifactKey: Guid(47350eb1452ae8c419d8a4fce8aed998) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_55.asset using Guid(47350eb1452ae8c419d8a4fce8aed998) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9db6b2c8e539f4408f6c8620f20a09f7') in 0.005228 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism/New Rule Tile.asset
-  artifactKey: Guid(4df1307295121454c95d68cf716e8d1b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/New Rule Tile.asset using Guid(4df1307295121454c95d68cf716e8d1b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'aa9aab50e3caa749805114acd3a4d939') in 0.004763 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_16.asset
-  artifactKey: Guid(c6c3eba50557c874b8dbef0d4e340b90) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_16.asset using Guid(c6c3eba50557c874b8dbef0d4e340b90) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '09d6cda0734fb6479e9f9edd645f5516') in 0.006018 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_15.asset
-  artifactKey: Guid(dd8fcff05eb5698448cb7e988b2f1465) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_15.asset using Guid(dd8fcff05eb5698448cb7e988b2f1465) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c1ac9fb6f0a28953454126ce6febef99') in 0.005364 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_14.asset
-  artifactKey: Guid(957b9a1c226b8494f83086f73777fae8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_14.asset using Guid(957b9a1c226b8494f83086f73777fae8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '746de9c46f25534917c58dc76a2f6c35') in 0.005542 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_12.asset
-  artifactKey: Guid(2a083c86f2a248b4b9eaf2f2775f29ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_12.asset using Guid(2a083c86f2a248b4b9eaf2f2775f29ac) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '77d1ce9daeb82f75b17a6fbabe993217') in 0.005228 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_23.asset
-  artifactKey: Guid(993230675f139754283fada326c938ab) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_23.asset using Guid(993230675f139754283fada326c938ab) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '648776e6658c8ded10c012eb65193dde') in 0.005399 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_114.asset
-  artifactKey: Guid(1f687e30c9ca6d849bd838964859896b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_114.asset using Guid(1f687e30c9ca6d849bd838964859896b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'bccd047b7a444a31d8253aa9c913c7d4') in 0.006723 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_40.asset
-  artifactKey: Guid(298fe6e7c83440e4c9f7c0bd49bfc769) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_40.asset using Guid(298fe6e7c83440e4c9f7c0bd49bfc769) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '432c22c83abb7f455873d10a8ba8524f') in 0.005578 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_45.asset
-  artifactKey: Guid(904279ab164a47249870e892f4e82b0d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_45.asset using Guid(904279ab164a47249870e892f4e82b0d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'd913c851adff6c0a8bf651ee3f8ee410') in 0.005598 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_58.asset
-  artifactKey: Guid(e9da8457c4f68074898dbc8ba1ecbb71) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_58.asset using Guid(e9da8457c4f68074898dbc8ba1ecbb71) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1408340850a80a4046e4d074acfb0401') in 0.005302 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_108.asset
-  artifactKey: Guid(89bbdff5d519d8a45a063f3d01510597) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_108.asset using Guid(89bbdff5d519d8a45a063f3d01510597) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cee9fec4be747617b931417cffc94cbc') in 0.005946 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_3.asset
-  artifactKey: Guid(836b046fe8444854fb433f4f89c9e37b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_3.asset using Guid(836b046fe8444854fb433f4f89c9e37b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4e4c84fdf5dd3e0d31dee080fe898d10') in 0.005229 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_33.asset
-  artifactKey: Guid(73d8cf0712fff2244a53e6711daa549b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_33.asset using Guid(73d8cf0712fff2244a53e6711daa549b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7b2a93ceca6e8e676659d19e9cc3a8f3') in 0.005145 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_43.asset
-  artifactKey: Guid(683b757f43a49a448bebb16fd443ac32) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_43.asset using Guid(683b757f43a49a448bebb16fd443ac32) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5227a61737de7290a7049a2e0fdcbd07') in 0.008247 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_57.asset
-  artifactKey: Guid(e7fea0406fabf514a9ef558039cdb560) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_57.asset using Guid(e7fea0406fabf514a9ef558039cdb560) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '18aa843b0b9cfcefec2c41c4f1422646') in 0.008361 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_21.asset
-  artifactKey: Guid(a53d6e0f665d76c4d886c379311f360b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_21.asset using Guid(a53d6e0f665d76c4d886c379311f360b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2efd3ce79d2175531a82c95a988e97ae') in 0.005277 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism_tileset_cut_32.asset
-  artifactKey: Guid(aa60c99e2e5687a408e773cc94e685e4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism_tileset_cut_32.asset using Guid(aa60c99e2e5687a408e773cc94e685e4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cf6b9de9f91f9360e1170c4387fdd4bf') in 0.008358 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Animation/Land.anim
-  artifactKey: Guid(53669dfc998c89b4dab22ceba84d6ae4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Animation/Land.anim using Guid(53669dfc998c89b4dab22ceba84d6ae4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '339b58e646ff7c35bcbbc14e887f663c') in 0.004998 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.041942 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_63.asset
-  artifactKey: Guid(c70e657f0048d2c4fa219ea80a623350) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_63.asset using Guid(c70e657f0048d2c4fa219ea80a623350) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f6fe7d3abba54410b79d00326bee2ab2') in 0.005395 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_128.asset
-  artifactKey: Guid(527a424fe2985a241bd5b8b7540cdacc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_128.asset using Guid(527a424fe2985a241bd5b8b7540cdacc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a955740416ebb0d3d2f2a733aadeb5a2') in 0.005687 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_113.asset
-  artifactKey: Guid(abd058d610e6e424ba7048d00cfb41b8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_113.asset using Guid(abd058d610e6e424ba7048d00cfb41b8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'b6a2fb9f399ac82849d367d6c27843f6') in 0.005602 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_7.asset
-  artifactKey: Guid(98322cf86cb79df4fb7389e2eaac2f02) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_7.asset using Guid(98322cf86cb79df4fb7389e2eaac2f02) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f27da1e143bb3968392b09a49c3d76a1') in 0.004884 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_146.asset
-  artifactKey: Guid(e84ec76f1c2ff6e4897efb6365aafa69) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_146.asset using Guid(e84ec76f1c2ff6e4897efb6365aafa69) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7f2dac72868dfcc52005189d5d321970') in 0.005963 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_121.asset
-  artifactKey: Guid(24e1e6d14078e1d4a818371af622bafe) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_121.asset using Guid(24e1e6d14078e1d4a818371af622bafe) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'bb39b82b52b0a80e7a1b51d31e4de7f3') in 0.007003 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_143.asset
-  artifactKey: Guid(d6efa4ed763d4ca40b07b5b316bba055) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_143.asset using Guid(d6efa4ed763d4ca40b07b5b316bba055) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7368449f23adfdde74465a75f451e193') in 0.005877 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_65.asset
-  artifactKey: Guid(653a0b6372e247e4d9ff9cbb155a040f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_65.asset using Guid(653a0b6372e247e4d9ff9cbb155a040f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '664f396e812f06f88a32970f15d98848') in 0.005493 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_85.asset
-  artifactKey: Guid(170115964da194f47b50d62402b3fdf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_85.asset using Guid(170115964da194f47b50d62402b3fdf1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '50baef10d0afc1246c311d91dd29ef3d') in 0.006569 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/_Scripts/Scriptable/VectorValue.cs
-  artifactKey: Guid(a09e2cb83131f954192f063eb1ccb850) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/_Scripts/Scriptable/VectorValue.cs using Guid(a09e2cb83131f954192f063eb1ccb850) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dac684d466b76e6e83321cd56274664a') in 0.005949 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_129.asset
-  artifactKey: Guid(9e68aab8ff569ad42aafa29a4b992ae0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_129.asset using Guid(9e68aab8ff569ad42aafa29a4b992ae0) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a78387dad6b1aaf20734381137c09431') in 0.005995 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_105.asset
-  artifactKey: Guid(70ce7458880fef6468b35a0de364cc94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_105.asset using Guid(70ce7458880fef6468b35a0de364cc94) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '52c7b1e2af6633f5f68f307cc970b886') in 0.006182 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_132.asset
-  artifactKey: Guid(4ab375de69821f640bedb6bb78c41589) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_132.asset using Guid(4ab375de69821f640bedb6bb78c41589) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f1b4ea746f301fd3a899b8564f64da81') in 0.005217 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000011 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_135.asset
-  artifactKey: Guid(81eeed6f826138544ac979a97e237d89) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_135.asset using Guid(81eeed6f826138544ac979a97e237d89) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '59f91d4d3d182ef1d22d7ed0b6afa84e') in 0.007287 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_77.asset
-  artifactKey: Guid(bf742c3046cbc2840b0ac1f517cca56b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_77.asset using Guid(bf742c3046cbc2840b0ac1f517cca56b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '190af0f1cb8316d228e9cf3b3746041f') in 0.006153 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_1.asset
-  artifactKey: Guid(8dc806a2157202a43962afe6366fe95f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_1.asset using Guid(8dc806a2157202a43962afe6366fe95f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '0d657f1aef39831eab6eac282bae76da') in 0.005917 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_111.asset
-  artifactKey: Guid(1680ad8232af05b4192507c30aa5576e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_111.asset using Guid(1680ad8232af05b4192507c30aa5576e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '44cbe5f17724f42ae404c11baee84a47') in 0.005254 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_122.asset
-  artifactKey: Guid(a3e339d2314eb15478557caa77b5bfcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_122.asset using Guid(a3e339d2314eb15478557caa77b5bfcd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4d7b3da32067d4f8d7296b9f5091bf93') in 0.005125 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_147.asset
-  artifactKey: Guid(f55e92e806d35ea43b0b3f0822931531) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_147.asset using Guid(f55e92e806d35ea43b0b3f0822931531) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4e56937b72f3c65769c757ef934125da') in 0.005196 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_126.asset
-  artifactKey: Guid(00d052525674c1e4f9b3d53835058a5d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_126.asset using Guid(00d052525674c1e4f9b3d53835058a5d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '33dd4e2bb2ca6df7e542845c8a38570f') in 0.005430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_92.asset
-  artifactKey: Guid(5e9060d630198454c8627162bcfd2c96) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_92.asset using Guid(5e9060d630198454c8627162bcfd2c96) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c2fa94f29225605332584204f779e68f') in 0.006268 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_96.asset
-  artifactKey: Guid(7547679bceff7564d9522fffae0667b8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_96.asset using Guid(7547679bceff7564d9522fffae0667b8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cf248ecb6e82ea20eee4fff93bbeec0a') in 0.005504 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_125.asset
-  artifactKey: Guid(7f21f173818bc544ba9e4037d0bfb8bc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_125.asset using Guid(7f21f173818bc544ba9e4037d0bfb8bc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e93c00aad2905721f4c90a0581e690a1') in 0.006285 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_131.asset
-  artifactKey: Guid(8a27f694291e22247bfc0a203dabb7a7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_131.asset using Guid(8a27f694291e22247bfc0a203dabb7a7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '71d3bd3dcfbb62762eb0b5243f9d3f51') in 0.006274 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_86.asset
-  artifactKey: Guid(130eca193d6380d4f87665498a988e56) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_86.asset using Guid(130eca193d6380d4f87665498a988e56) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e7f91de0f720ae1302e55012992df579') in 0.005506 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_93.asset
-  artifactKey: Guid(c701880d9e7aa6b4bad63b60dc7f9065) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_93.asset using Guid(c701880d9e7aa6b4bad63b60dc7f9065) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5f4fcad66bbcbac9f7778b41d6f2f9ab') in 0.005838 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_82.asset
-  artifactKey: Guid(8db225bab477f7240a3da5ffd2c8cdf2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_82.asset using Guid(8db225bab477f7240a3da5ffd2c8cdf2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a9f6cf54d3f814a8c2f1f5d5c3e8ee32') in 0.006040 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_11.asset
-  artifactKey: Guid(4a131cf74e693c142b855346af065fe5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_11.asset using Guid(4a131cf74e693c142b855346af065fe5) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dedba51f7c903ddbd734a2d819ca1bbe') in 0.007402 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_137.asset
-  artifactKey: Guid(4dd9aec66e806624a96fa50b2fe78e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_137.asset using Guid(4dd9aec66e806624a96fa50b2fe78e53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '054aeef96bd63f51a2ded9ffd637e8a1') in 0.006006 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_80.asset
-  artifactKey: Guid(9172a52d0c522fd40affd034178ce690) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_80.asset using Guid(9172a52d0c522fd40affd034178ce690) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '24266f979dccfaaf73c05159ee1c9f88') in 0.006095 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_142.asset
-  artifactKey: Guid(e3b8a1217ad32044d8775863745eab32) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_142.asset using Guid(e3b8a1217ad32044d8775863745eab32) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '0f51cc54be775133cccec393551bb74c') in 0.006231 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_140.asset
-  artifactKey: Guid(0d6c9660a6e4de148a4e7356ff7f2c66) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_140.asset using Guid(0d6c9660a6e4de148a4e7356ff7f2c66) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8d148edcff9ee5ee1d757f4e73b1b210') in 0.005816 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_148.asset
-  artifactKey: Guid(6eb89e89f01747945b98a0f28acee60f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_148.asset using Guid(6eb89e89f01747945b98a0f28acee60f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '199739152ba5a86d98ec4386beff1f79') in 0.006491 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_115.asset
-  artifactKey: Guid(a211d039926921341bdfed4cecf07932) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_115.asset using Guid(a211d039926921341bdfed4cecf07932) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f4493ad46a82f9c1f09f0dfee7465be8') in 0.006241 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_97.asset
-  artifactKey: Guid(dcd0a33f5803c354a83cd684bdfd87b4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_97.asset using Guid(dcd0a33f5803c354a83cd684bdfd87b4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9cc1fa734ac6b8b8ddddb9a0e81136cf') in 0.005840 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_99.asset
-  artifactKey: Guid(33453c4359144764d8955946fbda5919) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_99.asset using Guid(33453c4359144764d8955946fbda5919) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2cf71f829083b7a7f818f971e3aa53a0') in 0.005881 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_98.asset
-  artifactKey: Guid(64f023318e20eae4d86f7305462440f2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_98.asset using Guid(64f023318e20eae4d86f7305462440f2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '46cafc2e794c13f436fd9861260e2f64') in 0.005418 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_133.asset
-  artifactKey: Guid(ed7eac1554a33024993793668e95063a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_133.asset using Guid(ed7eac1554a33024993793668e95063a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'afed34625b21ac1fe5982a4c61cdb0a0') in 0.005986 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_120.asset
-  artifactKey: Guid(bac6c3c1296124b439bf222db09981a1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_120.asset using Guid(bac6c3c1296124b439bf222db09981a1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7558b749bd4a491bf338b7404aed27f9') in 0.006054 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_103.asset
-  artifactKey: Guid(458d7f632aac21d4687adfe0844ce5f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_103.asset using Guid(458d7f632aac21d4687adfe0844ce5f1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '0ed2d3c065515ca29c5a952818701c07') in 0.005819 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_127.asset
-  artifactKey: Guid(9c09041c96bafd644acf1f3bd6c10a53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_127.asset using Guid(9c09041c96bafd644acf1f3bd6c10a53) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'c3e0a0e33d8ccaf587ceb29fedb54cd2') in 0.005766 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_81.asset
-  artifactKey: Guid(ee1654065f43dfb4bad1302392cef04e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_81.asset using Guid(ee1654065f43dfb4bad1302392cef04e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '545121f60787bbfa84bcfb0cb14c61c3') in 0.006336 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_73.asset
-  artifactKey: Guid(ad91b13cc9862cd46864434396e9d8ba) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_73.asset using Guid(ad91b13cc9862cd46864434396e9d8ba) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '14cc827d830ab2e3fa9d68b6f3bfcc02') in 0.006106 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_15.asset
-  artifactKey: Guid(ee39ad6001517784f8255bb8cd17abd8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_15.asset using Guid(ee39ad6001517784f8255bb8cd17abd8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'fb06ba879ee05622bfcb7072e4a6bc2d') in 0.005750 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_95.asset
-  artifactKey: Guid(0e93440b6ff352149b06c16da5b6c72a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_95.asset using Guid(0e93440b6ff352149b06c16da5b6c72a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5cabe8429097a01064283bca99140351') in 0.005914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_88.asset
-  artifactKey: Guid(40d1533e457b73b42babe662256d9223) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_88.asset using Guid(40d1533e457b73b42babe662256d9223) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f58fa9294182059f3e5b197eeff6b25e') in 0.005001 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_109.asset
-  artifactKey: Guid(79134ac6ceab12444b626480b93064b6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_109.asset using Guid(79134ac6ceab12444b626480b93064b6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e7e42182b31f81a34a5f4c24be8d24ed') in 0.005731 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_100.asset
-  artifactKey: Guid(5e18ad9ef7dedb845acbc31513b759f2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_100.asset using Guid(5e18ad9ef7dedb845acbc31513b759f2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '93a1f027ba5298110b98beba0a2f5082') in 0.005779 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Tiles/Traumatism/Traumatism_tileset_cut_83.asset
-  artifactKey: Guid(b252b505c26469740944568234696311) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Tiles/Traumatism/Traumatism_tileset_cut_83.asset using Guid(b252b505c26469740944568234696311) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5692151e6afd112e6e4fb64f03c872b5') in 0.005801 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_101.asset
-  artifactKey: Guid(43b55d5f5b5dc034c9ab717d6fdc1f92) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_101.asset using Guid(43b55d5f5b5dc034c9ab717d6fdc1f92) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2af8240af512a6d024507450e1f23050') in 0.005999 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.052371 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_151.asset
-  artifactKey: Guid(a62c63252db0a3341b189515d6d871d7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_151.asset using Guid(a62c63252db0a3341b189515d6d871d7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '89c56d85d2ca6c009199c04c4810f6d2') in 0.005719 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_16.asset
-  artifactKey: Guid(5aef89eb8cee9354b80a34869dd5dfc6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_16.asset using Guid(5aef89eb8cee9354b80a34869dd5dfc6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8c345e95209b4e7e5802b5e36ca662b0') in 0.005653 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_72.asset
-  artifactKey: Guid(00b2c02e272fdb4499d568086fbad2cd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_72.asset using Guid(00b2c02e272fdb4499d568086fbad2cd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4ec49c6ac5329179ff44df767b24e57a') in 0.005365 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_60.asset
-  artifactKey: Guid(873f0b2118167dc41b7ae86e65f3bd92) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_60.asset using Guid(873f0b2118167dc41b7ae86e65f3bd92) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e3f34e6f1981b5d0b2abddaf727d7e53') in 0.005538 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_46.asset
-  artifactKey: Guid(b8c016d970c31664ea44a2cbaa0eb5dd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_46.asset using Guid(b8c016d970c31664ea44a2cbaa0eb5dd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ec19e9c22347b1dcc9d04f963cc1641f') in 0.005472 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_92.asset
-  artifactKey: Guid(f2f0b531c83330f40a002596151c2e37) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_92.asset using Guid(f2f0b531c83330f40a002596151c2e37) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3f560bceb4df58c1ec68203a92dcc969') in 0.006653 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_160.asset
-  artifactKey: Guid(93af81ed4ea26ea4c90703263fda7923) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_160.asset using Guid(93af81ed4ea26ea4c90703263fda7923) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '43353fc2f09be5c1af85bd04512b8577') in 0.006275 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_88.asset
-  artifactKey: Guid(1daeafd8babe7224587033ffe81a9709) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_88.asset using Guid(1daeafd8babe7224587033ffe81a9709) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'e7d2d47ce6154749096d7b47751d6c9e') in 0.006513 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_179.asset
-  artifactKey: Guid(6893c1f6afb075b479f0960a6de55b28) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_179.asset using Guid(6893c1f6afb075b479f0960a6de55b28) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '81e69dc125c336ccc9ab20d8f2dec5ce') in 0.005673 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_40.asset
-  artifactKey: Guid(d9952cdf0986164489acc77f107b5e7a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_40.asset using Guid(d9952cdf0986164489acc77f107b5e7a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8bf3e7e81c7488018b26e55546835796') in 0.005474 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_68.asset
-  artifactKey: Guid(a7150f35348e96c4e89ee5266f9d4962) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_68.asset using Guid(a7150f35348e96c4e89ee5266f9d4962) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3d39bd19150f96b31f2420ed634c8aa5') in 0.005528 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_25.asset
-  artifactKey: Guid(ee9586fe89db0154a94ee1b10e7def4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_25.asset using Guid(ee9586fe89db0154a94ee1b10e7def4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '89340ad6902fdd659c6362a388c6b65e') in 0.005590 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_9.asset
-  artifactKey: Guid(c7367101803be974294841e8614d5d6d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_9.asset using Guid(c7367101803be974294841e8614d5d6d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ee7decd9ac1dfb16b7aad3037b412185') in 0.005142 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_175.asset
-  artifactKey: Guid(d91e53f576c81134fb2b3030d727f710) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_175.asset using Guid(d91e53f576c81134fb2b3030d727f710) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '0ae465d34f8d9a80963de420385c2462') in 0.006010 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_29.asset
-  artifactKey: Guid(47856e676ed44e84f8cb3c73694eeddd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_29.asset using Guid(47856e676ed44e84f8cb3c73694eeddd) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '08d0fd288bb96a4628b1493f51cb6146') in 0.005789 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
-  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '29beebe0c010453deeec419da1d5e752') in 0.009082 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_83.asset
-  artifactKey: Guid(3ec0a830f48e9c94d838c2cb46641f06) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_83.asset using Guid(3ec0a830f48e9c94d838c2cb46641f06) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'dc3f7b53d89d13de843843091e4ebf77') in 0.006394 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_28.asset
-  artifactKey: Guid(5e1bd4ffac49c9e4e924f843426f862a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_28.asset using Guid(5e1bd4ffac49c9e4e924f843426f862a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7ec1f3d0b45f203e5c70871d870de22a') in 0.005491 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_80.asset
-  artifactKey: Guid(d6f6a4f00f54c184db677320d5f8e102) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_80.asset using Guid(d6f6a4f00f54c184db677320d5f8e102) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'be12539c46074c6e1b9712ab7c1bbfad') in 0.005779 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_168.asset
-  artifactKey: Guid(4b82dcdf1b684894ba7f5c4c9d12aace) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_168.asset using Guid(4b82dcdf1b684894ba7f5c4c9d12aace) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9cede627df7957317012f6e265c2436e') in 0.005387 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_75.asset
-  artifactKey: Guid(20d4d7f0aafea8f4f8e85f9b2d2c6039) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_75.asset using Guid(20d4d7f0aafea8f4f8e85f9b2d2c6039) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4d419cafd5217d23662f69e3770c7153') in 0.005878 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_27.asset
-  artifactKey: Guid(c86829ca83e0b554292035a1f8d1d91b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_27.asset using Guid(c86829ca83e0b554292035a1f8d1d91b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '69503eb08f8a3b0c4e5442c81a039328') in 0.006019 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_188.asset
-  artifactKey: Guid(6bac9522b7dc81c4a8fffd70eec5c6da) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_188.asset using Guid(6bac9522b7dc81c4a8fffd70eec5c6da) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4cc07ed269e261a6aed68126ff1c5193') in 0.005821 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_159.asset
-  artifactKey: Guid(5bbc5b13e3de2294d8c0902fec081bfb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_159.asset using Guid(5bbc5b13e3de2294d8c0902fec081bfb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '0bd9d3447fe7ef8a6d12cfbc003d6b52') in 0.005927 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_53.asset
-  artifactKey: Guid(21626d473c700fb459064d9fd6713f87) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_53.asset using Guid(21626d473c700fb459064d9fd6713f87) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '6e511d6f361fe1999f7bae386e92f45e') in 0.005518 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_163.asset
-  artifactKey: Guid(76f242fa38e561142b88812ea4f8cf88) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_163.asset using Guid(76f242fa38e561142b88812ea4f8cf88) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'aa6ec690d5a03d2e10674a0eeea0a985') in 0.005953 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_91.asset
-  artifactKey: Guid(c22b0b715fd740745aa4fb50517a295b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_91.asset using Guid(c22b0b715fd740745aa4fb50517a295b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ced1880ae40433bd6bc96743c236a3dc') in 0.005755 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_196.asset
-  artifactKey: Guid(75e85954c57be904d99809743240d4ed) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_196.asset using Guid(75e85954c57be904d99809743240d4ed) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4ee90972cfb9be95bcafbee1d7707961') in 0.006923 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_5.asset
-  artifactKey: Guid(3cb3362ef136d0b48ad4ec8d7fe43098) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_5.asset using Guid(3cb3362ef136d0b48ad4ec8d7fe43098) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'de9c403ed4ef2b9adc06db83980c8a0b') in 0.006612 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_174.asset
-  artifactKey: Guid(782c145be853fcb4a8d713ec3076476f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_174.asset using Guid(782c145be853fcb4a8d713ec3076476f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '35ad134ba5ded45eab090f454395750c') in 0.005708 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_70.asset
-  artifactKey: Guid(b38c6843d16adfb4ea214c1bcaf17f4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_70.asset using Guid(b38c6843d16adfb4ea214c1bcaf17f4d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '510d6af1b29dfb927cae1765c59609e6') in 0.006878 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_18.asset
-  artifactKey: Guid(1f9034cd954adba4681ade3822948a33) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_18.asset using Guid(1f9034cd954adba4681ade3822948a33) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '40d60adf0cc72d4fd0f6d0bba5ba5d5a') in 0.005751 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_185.asset
-  artifactKey: Guid(ecbdab8eaf641b646bb43d85dd19f6ad) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_185.asset using Guid(ecbdab8eaf641b646bb43d85dd19f6ad) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'cf44117507aefa5d2e1e87364ae1835a') in 0.005799 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_155.asset
-  artifactKey: Guid(31d9dee6e25d24b45a9df7276ff7fda6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_155.asset using Guid(31d9dee6e25d24b45a9df7276ff7fda6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a21f4481a6fe4f8a3cf9f99f08e9c131') in 0.005198 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_17.asset
-  artifactKey: Guid(980e37dd011b6a04c90fe2210a1d83f9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_17.asset using Guid(980e37dd011b6a04c90fe2210a1d83f9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ebd918682a812d2458f82f6417cc82b3') in 0.006244 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_178.asset
-  artifactKey: Guid(c6331c889a2c5e24eabdc1bef5b365c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_178.asset using Guid(c6331c889a2c5e24eabdc1bef5b365c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f865d8baff0cb55f3dc970d4c23fd79c') in 0.005268 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_58.asset
-  artifactKey: Guid(fa52ed202c1c3604bb1d26d06cbc1ca1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_58.asset using Guid(fa52ed202c1c3604bb1d26d06cbc1ca1) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '167d7b06bbe36c9866097b077323cebe') in 0.006376 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_156.asset
-  artifactKey: Guid(3b7cfef598b401145b187aedcbc52610) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_156.asset using Guid(3b7cfef598b401145b187aedcbc52610) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '58cc5d740948381b509049723c2ee15e') in 0.005296 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_173.asset
-  artifactKey: Guid(8afe74a17c201f341b82a8b6071cf5ec) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_173.asset using Guid(8afe74a17c201f341b82a8b6071cf5ec) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'eb5b58945bf3f919b9615452757f57b3') in 0.005679 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_94.asset
-  artifactKey: Guid(791abf32ec82a8b40a8214653a90646f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_94.asset using Guid(791abf32ec82a8b40a8214653a90646f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '9419423ac0754016d1dc15c795654808') in 0.005533 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_48.asset
-  artifactKey: Guid(56f6f972462eb5b499fa110bb0e664cb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_48.asset using Guid(56f6f972462eb5b499fa110bb0e664cb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ce4f244dc5244da0be7deffdf4bb9150') in 0.005471 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_66.asset
-  artifactKey: Guid(c39583d73fcbae74e82bf9e943d4858f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_66.asset using Guid(c39583d73fcbae74e82bf9e943d4858f) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '961053556240f7320173d7ae1b0c3a60') in 0.005924 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_153.asset
-  artifactKey: Guid(b054b152fff89764a97829a7dec4234a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_153.asset using Guid(b054b152fff89764a97829a7dec4234a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'f751a4b3e42db6d520be96559314349f') in 0.005424 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_36.asset
-  artifactKey: Guid(2f8afd534fd96bc4b98d9832609d6781) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_36.asset using Guid(2f8afd534fd96bc4b98d9832609d6781) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '879c23f9c03a9a038a194c6f0fb36dc8') in 0.005833 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_20.asset
-  artifactKey: Guid(c3ba7c94fd71b45438c492462a399a31) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_20.asset using Guid(c3ba7c94fd71b45438c492462a399a31) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '23b8984f98e37edf8d51ad313c9c02f8') in 0.006310 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_199.asset
-  artifactKey: Guid(35ff6ce7f7197e843b887de76640fb14) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_199.asset using Guid(35ff6ce7f7197e843b887de76640fb14) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7b5139e881920f3cb11531042e58ffec') in 0.005879 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_191.asset
-  artifactKey: Guid(aa2ae9667d80666448b421d4f3ddd9eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_191.asset using Guid(aa2ae9667d80666448b421d4f3ddd9eb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a42a3b93331c9d5eb42e91a0e4711ba0') in 0.005659 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_167.asset
-  artifactKey: Guid(341104e2a94f24540ba750e8e5be6b02) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_167.asset using Guid(341104e2a94f24540ba750e8e5be6b02) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'ae7f024487845f54d8622d092316328b') in 0.005396 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_86.asset
-  artifactKey: Guid(82336b1c521dd3c4fb60debc1c02c78a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_86.asset using Guid(82336b1c521dd3c4fb60debc1c02c78a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '42aebff3d3726b5a7c0c50530676dc3d') in 0.005907 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_67.asset
-  artifactKey: Guid(540c229fa00dbe04f897ef91f131bb36) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_67.asset using Guid(540c229fa00dbe04f897ef91f131bb36) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '86e1ed8b9203ec57e3e56a4b6909377d') in 0.005607 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_81.asset
-  artifactKey: Guid(8a0e585549103074d84d517abb8ceefb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_81.asset using Guid(8a0e585549103074d84d517abb8ceefb) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '3c8cefbb99cdcdfe3250c7329216231c') in 0.005692 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_6.asset
-  artifactKey: Guid(52d55cd28d50cd44a97e3ba2e2d3b57c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_6.asset using Guid(52d55cd28d50cd44a97e3ba2e2d3b57c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '440de391a3bd67a776bbb855270ab5a2') in 0.006234 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_166.asset
-  artifactKey: Guid(c1c7772551eac2045a0e14a32155dd6d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_166.asset using Guid(c1c7772551eac2045a0e14a32155dd6d) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1c1d2a8c56080fc754114120da2e8a48') in 0.005450 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_158.asset
-  artifactKey: Guid(26e07d087ef0fae4cbb7db95914de410) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_158.asset using Guid(26e07d087ef0fae4cbb7db95914de410) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'a1b36d6b4b9715e2f5aa0a6e332a0471') in 0.006132 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_157.asset
-  artifactKey: Guid(7c5f07f4c72454d48b7d97a933adb3ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_157.asset using Guid(7c5f07f4c72454d48b7d97a933adb3ee) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8bd2f7e7d7789f985022c7081e26c3aa') in 0.006096 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_47.asset
-  artifactKey: Guid(11cad71850e9324409a0da8285e54fa8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_47.asset using Guid(11cad71850e9324409a0da8285e54fa8) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '55fc529f1b3e5386c08227109ed64d85') in 0.006919 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_186.asset
-  artifactKey: Guid(a13b93c3751bf134585725d24fd3bacc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_186.asset using Guid(a13b93c3751bf134585725d24fd3bacc) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '7c2cb9aec516adffbfa0a5b76f3ff34c') in 0.007333 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_165.asset
-  artifactKey: Guid(2f016fbaff33f6147bc2545c4e4f47f6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_165.asset using Guid(2f016fbaff33f6147bc2545c4e4f47f6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '86149abc443b585db3689bb406eb1b91') in 0.006648 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_187.asset
-  artifactKey: Guid(d6831f293bfd7c741af4dfd01ef99dd7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_187.asset using Guid(d6831f293bfd7c741af4dfd01ef99dd7) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '2d30f6328573931c881c50f6cdc837ba') in 0.005721 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_190.asset
-  artifactKey: Guid(6780688c253393b4e909096c690200c6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_190.asset using Guid(6780688c253393b4e909096c690200c6) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '6057eebd98a9c1992425024269970b4c') in 0.005216 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_2.asset
-  artifactKey: Guid(a81ac32b2c7730e47acba324ed1000e2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_2.asset using Guid(a81ac32b2c7730e47acba324ed1000e2) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '5d393b2791db873433384ffa626f0dca') in 0.006158 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_65.asset
-  artifactKey: Guid(59040c1ead6514142875942f897b0054) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_65.asset using Guid(59040c1ead6514142875942f897b0054) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '58c1456302637d9116568046a341adc7') in 0.006209 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
-  artifactKey: Guid(f952c082cb03451daed3ee968ac6c63e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset using Guid(f952c082cb03451daed3ee968ac6c63e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '420b15f09cedfe0649027180ad0b8f9e') in 0.004886 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_22.asset
-  artifactKey: Guid(c715a6afa6d736e45ae35cedf4f2726b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_22.asset using Guid(c715a6afa6d736e45ae35cedf4f2726b) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '562ea81820d92b0a65ee1a75f77417a9') in 0.005963 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_193.asset
-  artifactKey: Guid(b1fd161a23b2e9a429844ca4151969e4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_193.asset using Guid(b1fd161a23b2e9a429844ca4151969e4) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'd9f291f3da578f239135701963d8f358') in 0.005649 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_61.asset
-  artifactKey: Guid(654dae57eb42eda469f82af370280593) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_61.asset using Guid(654dae57eb42eda469f82af370280593) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '1aef2a075823af0fd3f1bd462f671a33') in 0.005733 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_197.asset
-  artifactKey: Guid(c18a0deab64ac7f459f1bbe5f634a4ad) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_197.asset using Guid(c18a0deab64ac7f459f1bbe5f634a4ad) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: 'caedeb44a31b72fd6fb0caa6705203b4') in 0.005484 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_62.asset
-  artifactKey: Guid(94c4eb4cedd78424d829204d15e6d8c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_62.asset using Guid(94c4eb4cedd78424d829204d15e6d8c9) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '95f4b9d825e05353e0292ff4b6ce0466') in 0.006430 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_152.asset
-  artifactKey: Guid(a2c8e40211bb86e4cbd46b298f77b099) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_152.asset using Guid(a2c8e40211bb86e4cbd46b298f77b099) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '4e605a6b3913e3270325eb375fb5cd61') in 0.005965 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_4.asset
-  artifactKey: Guid(9797acc2e04c717448f91930c15582d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_4.asset using Guid(9797acc2e04c717448f91930c15582d3) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '81836550782f5b4e802a8fa1f1fa9d5f') in 0.005781 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_154.asset
-  artifactKey: Guid(edc80f2768d99754da713883ce6dc11c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_154.asset using Guid(edc80f2768d99754da713883ce6dc11c) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '861225199546bd5cd0fef8384a4adf3a') in 0.005706 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_69.asset
-  artifactKey: Guid(d5322d78c16237c42b5a34ff77aa89db) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_69.asset using Guid(d5322d78c16237c42b5a34ff77aa89db) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '8a20262226f6423a6acc3508e810cff3') in 0.005383 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_177.asset
-  artifactKey: Guid(f0c81415ca24c2b488c32ae74721d39a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_177.asset using Guid(f0c81415ca24c2b488c32ae74721d39a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '80d85acbf87886d7788b22f84db50a05') in 0.005700 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_95.asset
-  artifactKey: Guid(28f8752852cc39e43ad31f43f8b4658e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_95.asset using Guid(28f8752852cc39e43ad31f43f8b4658e) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '35f9434f4f53708638bacd7c88088097') in 0.006758 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_19.asset
-  artifactKey: Guid(77a9e0162cdf6044583459e78a8fa78a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5)
-Start importing Assets/Sprites/TilePalette/Palettes/Traumatism_tileset_19.asset using Guid(77a9e0162cdf6044583459e78a8fa78a) Importer(2089858483,934ff659095e30574adcf32a4c2f97b5) Generated GUIDs only implemented for interfaces!
- -> (artifact id: '42870e57990cdb714dde1a72cb62942b') in 0.005826 seconds 
+  path: Assets/Sprites/Player_purple.png
+  artifactKey: Guid(e92a18b63df1b6048830b775b288fd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Player_purple.png using Guid(e92a18b63df1b6048830b775b288fd0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54c117d3bacae70ab1cc4a85d6803af4') in 0.026085 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003700 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.811 seconds
+Domain Reload Profiling:
+	ReloadAssembly (812ms)
+		BeginReloadAssembly (108ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (634ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (126ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (372ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (46ms)
+				ProcessInitializeOnLoadAttributes (279ms)
+				ProcessInitializeOnLoadMethodAttributes (27ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2502 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (95.3 KB). Loaded Objects now: 3122.
+Memory consumption went from 120.8 MB to 120.7 MB.
+Total: 3.383500 ms (FindLiveObjects: 0.210900 ms CreateObjectMapping: 0.120200 ms MarkObjects: 3.025700 ms  DeleteObjects: 0.025900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
