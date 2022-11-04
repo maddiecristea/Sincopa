@@ -15,7 +15,15 @@ public class LevelManager : MonoBehaviour {
     public CinemachineVirtualCameraBase cam;
 
     private void Awake() {
-        instance = this;
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Respawn() {

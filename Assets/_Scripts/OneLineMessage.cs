@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckpointController : MonoBehaviour
+[System.Serializable]
+public class OneLineMessage
 {
-
-
+    public string message;
 }
+

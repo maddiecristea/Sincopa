@@ -14,6 +14,7 @@ namespace TarodevController {
         [SerializeField] private AudioSource _source;
         public Animator _anim;
         public AudioClip _deathClip;
+        public float time;
 
         private void OnCollisionEnter2D(Collision2D other) { 
             if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "DeathZone") 
@@ -28,7 +29,7 @@ namespace TarodevController {
 
         IEnumerator DelayedDeath()
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(time);
             Destroy(gameObject);
             LevelManager.instance.Respawn();  
         }

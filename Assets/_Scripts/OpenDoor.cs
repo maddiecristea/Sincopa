@@ -5,7 +5,8 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     private Inventory inventory;
-    [SerializeField] public GameObject ToggledObject;
+    [SerializeField] public GameObject ToggledObject;    
+    public OneLineMessage onelinemessage;
 
     private void Start()
     {
@@ -21,13 +22,13 @@ public class OpenDoor : MonoBehaviour
         {
             Debug.Log("Oh, look! A shiny door!");
             FindObjectOfType<UseItemScript>().UseItem();
-            Destroy(gameObject);
-            
+            Destroy(gameObject);         
+                 
         }
         else {
             Debug.Log("I can't open this, I need a key.");
+            FindObjectOfType<MessageManager>().ShowMessage(onelinemessage);
             ToggledObject.gameObject.SetActive(true);
-
         }
     }
     public void OnTriggerExit2D(Collider2D other)

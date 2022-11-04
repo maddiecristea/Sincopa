@@ -25,6 +25,13 @@ public class DialogueTrigger : MonoBehaviour
         }  
     }
 
+    public void OnTriggerExit2D(Collider2D other) {
+        if(other.CompareTag("Player")) 
+        {
+            FindObjectOfType<DialogueManager>().EndDialogue();   
+        }
+    }
+
     public void Update() 
     {      
         var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen();  
