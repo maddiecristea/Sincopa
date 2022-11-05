@@ -8,6 +8,8 @@ TagManager:
   - DeathZone
   - Door
   - GM
+  - PlayerAnimation
+  - Power
   layers:
   - Default
   - TransparentFX

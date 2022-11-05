@@ -14,7 +14,7 @@ namespace TarodevController {
     /// </summary>
     [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour, IPlayerController {
-        [SerializeField] private bool _allowDoubleJump, _allowDash;
+        [SerializeField] public bool _allowDoubleJump, _allowDash;
         
         // Public for external hooks
         public FrameInput Input { get; private set; }
