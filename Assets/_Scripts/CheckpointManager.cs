@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace TarodevController {
 public class CheckpointManager : MonoBehaviour
 {
     
@@ -21,4 +21,5 @@ public class CheckpointManager : MonoBehaviour
             lm.respawnPoint = gameObject.transform;            
         }
     }
+}
 }

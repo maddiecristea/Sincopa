@@ -19697,7 +19697,8 @@ MonoBehaviour:
   _source: {fileID: 5016610225824916468}
   _anim: {fileID: 5016610225510528848}
   _deathClip: {fileID: 8300000, guid: 0f1c1f591b057424fbc638a961326e5c, type: 3}
-  time: 0.7
+  time: 0.3
+  playerRB: {fileID: 4498279662373915308}
 --- !u!114 &353875605349740661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19991,7 +19992,6 @@ MonoBehaviour:
   _maxTilt: 5
   _tiltSpeed: 30
   _maxIdleSpeed: 2.244
-  _maxParticleFallSpeed: 0
   _crouchScaleModifier: {x: 1, y: 0.5}
   _sprite: {fileID: 5016610225510528849}
   _doubleJumpParticles: {fileID: 8637289933910568554}

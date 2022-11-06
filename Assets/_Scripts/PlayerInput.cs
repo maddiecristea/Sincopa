@@ -10,7 +10,8 @@ namespace TarodevController {
             return new FrameInput {
                 JumpDown = Input.GetButtonDown("Jump"),
                 JumpHeld = Input.GetButton("Jump"),
-                DashDown = Input.GetButtonDown("Dash"),
+                DashDown = Input.GetButtonDown("Dash"),                
+                //InteractDown = Input.GetButtonDown("Interact"),
 
                 X = Input.GetAxisRaw("Horizontal"),
                 Y = Input.GetAxisRaw("Vertical")
@@ -18,7 +19,7 @@ namespace TarodevController {
         }
 #elif (ENABLE_INPUT_SYSTEM)
         private PlayerInputActions _actions;
-        private InputAction _move, _jump, _dash;
+        private InputAction _move, _jump, _dash, _interact;
 
         private void Awake() => _actions = new PlayerInputActions();
 
@@ -31,12 +32,16 @@ namespace TarodevController {
 
             _dash = _actions.Player.Dash;
             _dash.Enable();
+
+            //_dash_interact = _actions.Player.Interact;
+            //_interact.Enable();
         }
 
         private void OnDisable() {
             _move.Disable();
             _jump.Disable();
             _dash.Disable();
+            //_interact.Disable();
         }
 
         public FrameInput GatherInput() {
@@ -44,6 +49,7 @@ namespace TarodevController {
                 JumpDown = _jump.WasPressedThisFrame(),
                 JumpHeld = _jump.IsPressed(),
                 DashDown = _dash.WasPressedThisFrame(),
+                //InteractDown = _interact.WasPressedThisFrame(),
 
                 X = _move.ReadValue<Vector2>().x,
                 Y = _move.ReadValue<Vector2>().y

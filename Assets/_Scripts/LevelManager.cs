@@ -10,7 +10,8 @@ public class LevelManager : MonoBehaviour {
     public static LevelManager instance;
 
     public Transform respawnPoint;
-    public GameObject playerPrefab;
+    public GameObject playerPrefab;    
+    public Rigidbody2D playerRB;
 
     public CinemachineVirtualCameraBase cam;
 
@@ -18,11 +19,6 @@ public class LevelManager : MonoBehaviour {
         if(instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -34,6 +30,7 @@ public class LevelManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.3f);
         GameObject player = Instantiate(playerPrefab, respawnPoint.position, Quaternion.identity);
-        cam.Follow = player.transform;
+        cam.Follow = player.transform;        
+        playerRB.isKinematic = false;
     }
 }

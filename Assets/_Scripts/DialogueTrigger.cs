@@ -6,6 +6,11 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    public void Start() {
+        var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen(); 
+        isOpen = false;
+    }
+
 
     public void TriggerDialogue () 
     {
@@ -14,14 +19,15 @@ public class DialogueTrigger : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
+        var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen(); 
 
         if(other.CompareTag("Player"))
         {
-            if (Input.GetButton("Interact"))
+            if (Input.GetButton("Interact") && !isOpen)
             {
-                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);             
+                FindObjectOfType<DialogueManager>().StartDialogue(dialogue);    
+                isOpen = true;     
             }
-                
         }  
     }
 
@@ -34,11 +40,17 @@ public class DialogueTrigger : MonoBehaviour
 
     public void Update() 
     {      
+
         var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen();  
         if (Input.GetButtonDown("Interact") && isOpen)
-        {
-            Debug.Log("Write only when open?");
-            FindObjectOfType<DialogueManager>().DisplayNextSentence();
+        {   
+            StartCoroutine(NextSentence());          
         }
-}
+    }
+
+    IEnumerator NextSentence()
+    {
+        yield return new WaitForSeconds(0.2f);        
+        FindObjectOfType<DialogueManager>().DisplayNextSentence();  
+    }
 }

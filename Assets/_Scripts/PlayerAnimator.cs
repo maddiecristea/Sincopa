@@ -17,7 +17,7 @@ namespace TarodevController {
         [SerializeField] private float _maxTilt = 5;
         [SerializeField] private float _tiltSpeed = 30;
         [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
-        [SerializeField] private float _maxParticleFallSpeed = -40;
+        //[SerializeField] private float _maxParticleFallSpeed = -40;
         [SerializeField] private Vector2 _crouchScaleModifier = new Vector2(1, 0.5f);
 
 
@@ -84,8 +84,8 @@ namespace TarodevController {
 
             // Only play particles when grounded (avoid coyote)
             if (_player.Grounded) {
-                SetColor(_jumpParticles);
-                SetColor(_launchParticles);
+                //SetColor(_jumpParticles);
+                //SetColor(_launchParticles);
                 _jumpParticles.Play();
             }
         }
@@ -97,8 +97,8 @@ namespace TarodevController {
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
                 _moveParticles.Play();
 
-                _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
-                SetColor(_landParticles);
+                //_landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
+                //SetColor(_landParticles);
                 _landParticles.Play();
             }
             else {
@@ -134,25 +134,25 @@ namespace TarodevController {
             //_anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
 
             // Speed up idle while running
-            _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputPoint));
+            //_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputPoint));
 
-            DetectGroundColor();
+            //DetectGroundColor();
 
             _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * inputPoint, 2 * Time.deltaTime);
 
             _movement = _player.RawMovement; // Previous frame movement is more valuable
         }
 
-        void DetectGroundColor() {
+        //void DetectGroundColor() {
             // Detect ground color. Little bit of garbage allocation, but faster computationally. Change to NonAlloc if you'd prefer
-            var groundHits = Physics2D.RaycastAll(transform.position, Vector3.down, 2, _groundMask);
-            foreach (var hit in groundHits) {
-                if (!hit || hit.collider.isTrigger || !hit.transform.TryGetComponent(out SpriteRenderer r)) continue;
-                _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
-                SetColor(_moveParticles);
-                return;
-            }
-        }
+           // var groundHits = Physics2D.RaycastAll(transform.position, Vector3.down, 2, _groundMask);
+            //foreach (var hit in groundHits) {
+            //    if (!hit || hit.collider.isTrigger || !hit.transform.TryGetComponent(out SpriteRenderer r)) continue;
+            //    _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
+            //    SetColor(_moveParticles);
+            //    return;
+            //}
+        //}
 
         private void OnDisable() {
             _moveParticles.Stop();
@@ -162,10 +162,10 @@ namespace TarodevController {
             _moveParticles.Play();
         }
 
-        void SetColor(ParticleSystem ps) {
-            var main = ps.main;
-            main.startColor = _currentGradient;
-        }
+        //void SetColor(ParticleSystem ps) {
+        //    var main = ps.main;
+        //    main.startColor = _currentGradient;
+        //}
 
 
         #region Animation Keys
