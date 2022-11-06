@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,25 +18,33 @@ namespace TarodevController {
         [SerializeField] private float _tiltSpeed = 30;
         [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
         [SerializeField] private float _maxParticleFallSpeed = -40;
+        [SerializeField] private Vector2 _crouchScaleModifier = new Vector2(1, 0.5f);
 
-        private PlayerController _player;
+
+        private IPlayerController _player;
         private ParticleSystem.MinMaxGradient _currentGradient;
         private Vector2 _movement;
+        private Vector2 _defaultSpriteSize;
 
         void Awake() {
-            _player = GetComponentInParent<PlayerController>();
+            _player = GetComponentInParent<IPlayerController>();
+
+            _defaultSpriteSize = _sprite.size;
 
             _player.OnGroundedChanged += OnLanded;
             _player.OnJumping += OnJumping;
             _player.OnDoubleJumping += OnDoubleJumping;
             _player.OnDashingChanged += OnDashing;
+            _player.OnCrouchingChanged += OnCrouching;
         }
-        
+
+
         void OnDestroy() {
             _player.OnGroundedChanged -= OnLanded;
             _player.OnJumping -= OnJumping;
             _player.OnDoubleJumping -= OnDoubleJumping;
             _player.OnDashingChanged -= OnDashing;
+            _player.OnCrouchingChanged -= OnCrouching;
         }
 
         private void OnDoubleJumping() {
@@ -47,8 +53,7 @@ namespace TarodevController {
         }
 
         private void OnDashing(bool dashing) {
-           
-            if (dashing) {
+            if (dashing) {                
                 _anim.SetTrigger(DashKey);
                 _anim.ResetTrigger(GroundedKey);
                 _dashParticles.Play();
@@ -57,18 +62,19 @@ namespace TarodevController {
                 _source.PlayOneShot(_dashClip);
             }
             else {
-                _dashParticles.Stop();
+                _dashParticles.Stop();                
                 _anim.SetTrigger(GroundedKey);
             }
         }
 
         #region Extended
-    
-        [Header("EXTENDED")]
+
+        [SerializeField] private SpriteRenderer _sprite;
         [SerializeField] private ParticleSystem _doubleJumpParticles;
-        [SerializeField] private AudioClip _doubleJumpClip,_dashClip;
-        [SerializeField] private ParticleSystem _dashParticles,_dashRingParticles, _deathParticles;
+        [SerializeField] private AudioClip _doubleJumpClip, _dashClip;
+        [SerializeField] private ParticleSystem _dashParticles, _dashRingParticles, _deathParticles;
         [SerializeField] private Transform _dashRingTransform;
+        [SerializeField] private AudioClip[] _slideClips;
 
         #endregion
 
@@ -78,25 +84,35 @@ namespace TarodevController {
 
             // Only play particles when grounded (avoid coyote)
             if (_player.Grounded) {
-                //SetColor(_jumpParticles);
-                //SetColor(_launchParticles);
+                SetColor(_jumpParticles);
+                SetColor(_launchParticles);
                 _jumpParticles.Play();
             }
         }
 
-    
 
         private void OnLanded(bool grounded) {
             if (grounded) {
                 _anim.SetTrigger(GroundedKey);
                 _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
                 _moveParticles.Play();
-                //_landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
-                //SetColor(_landParticles);
+
+                _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
+                SetColor(_landParticles);
                 _landParticles.Play();
             }
             else {
                 _moveParticles.Stop();
+            }
+        }
+
+        private void OnCrouching(bool crouching) {
+            if (crouching) {
+                _sprite.size = _defaultSpriteSize * _crouchScaleModifier;
+                _source.PlayOneShot(_slideClips[Random.Range(0, _slideClips.Length)], Mathf.InverseLerp(0, 5, Mathf.Abs(_movement.x)));
+            }
+            else {
+                _sprite.size = _defaultSpriteSize;
             }
         }
 
@@ -108,24 +124,34 @@ namespace TarodevController {
         void Update() {
             if (_player == null) return;
 
+            var inputPoint = Mathf.Abs(_player.Input.X);
+
             // Flip the sprite
             if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
 
             // Lean while running
-           // var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
+            //var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
             //_anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
 
-            //Speed up idle while running
-            //_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
-            
-            // Detect ground color
-            //var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            //if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
-                //_currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
-                //SetColor(_moveParticles);
-            //}
+            // Speed up idle while running
+            _anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, inputPoint));
+
+            DetectGroundColor();
+
+            _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * inputPoint, 2 * Time.deltaTime);
 
             _movement = _player.RawMovement; // Previous frame movement is more valuable
+        }
+
+        void DetectGroundColor() {
+            // Detect ground color. Little bit of garbage allocation, but faster computationally. Change to NonAlloc if you'd prefer
+            var groundHits = Physics2D.RaycastAll(transform.position, Vector3.down, 2, _groundMask);
+            foreach (var hit in groundHits) {
+                if (!hit || hit.collider.isTrigger || !hit.transform.TryGetComponent(out SpriteRenderer r)) continue;
+                _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
+                SetColor(_moveParticles);
+                return;
+            }
         }
 
         private void OnDisable() {
@@ -136,15 +162,16 @@ namespace TarodevController {
             _moveParticles.Play();
         }
 
-        //void SetColor(ParticleSystem ps) {
-        //    var main = ps.main;
-        //    main.startColor = _currentGradient;
-        //}
+        void SetColor(ParticleSystem ps) {
+            var main = ps.main;
+            main.startColor = _currentGradient;
+        }
+
 
         #region Animation Keys
 
         private static readonly int GroundedKey = Animator.StringToHash("Grounded");
-        private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
+        private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");     
         private static readonly int SpeedKey = Animator.StringToHash("Speed");
         private static readonly int JumpKey = Animator.StringToHash("Jump");
         private static readonly int DashKey = Animator.StringToHash("Dash");

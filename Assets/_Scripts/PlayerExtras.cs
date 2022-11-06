@@ -2,35 +2,45 @@ using System;
 using UnityEngine;
 
 namespace TarodevController {
-	public struct FrameInput {
-		public float X,Y;
-		public bool JumpDown;
-		public bool JumpHeld;
-		public bool DashDown;
-	}
+    public struct FrameInput {
+        public float X, Y;
+        public bool JumpDown;
+        public bool JumpHeld;
+        public bool DashDown;
+    }
 
-	public interface IPlayerController {
-		public FrameInput Input { get; }
-		public Vector3 RawMovement { get; }
-		public bool Grounded { get; }
+    public interface IPlayerController {
+        public FrameInput Input { get; }
+        public Vector2 RawMovement { get; }
+        public bool Grounded { get; }
 
-		public event Action<bool> OnGroundedChanged;
-		public event Action OnJumping,OnDoubleJumping;
-		public event Action<bool> OnDashingChanged;
-	}
-    
-	public interface IExtendedPlayerController : IPlayerController {
-		public bool DoubleJumpingThisFrame { get; set; }
-		public bool Dashing { get; set; }  
-	}
+        public event Action<bool> OnGroundedChanged;
+        public event Action OnJumping, OnDoubleJumping;
+        public event Action<bool> OnDashingChanged;
+        public event Action<bool> OnCrouchingChanged;
 
-	public struct RayRange {
-		public RayRange(float x1, float y1, float x2, float y2, Vector2 dir) {
-			Start = new Vector2(x1, y1);
-			End = new Vector2(x2, y2);
-			Dir = dir;
-		}
+        /// <summary>
+        /// Add force to the character
+        /// </summary>
+        /// <param name="force">Force to be applied to the controller</param>
+        /// <param name="mode">The force application mode</param>
+        /// <param name="cancelMovement">Cancel the current velocity of the player to provide a reliable reaction</param>
+        public void AddForce(Vector2 force, PlayerForce mode = PlayerForce.Burst, bool cancelMovement = true);
+    }
 
-		public readonly Vector2 Start, End, Dir;
-	}
+    public interface IPlayerEffector {
+        public Vector2 EvaluateEffector();
+    }
+
+    public enum PlayerForce {
+        /// <summary>
+        /// Added directly to the players movement speed, to be controlled by the standard deceleration
+        /// </summary>
+        Burst,
+
+        /// <summary>
+        /// An additive force handled by the decay system
+        /// </summary>
+        Decay
+    }
 }

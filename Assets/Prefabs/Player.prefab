@@ -19555,6 +19555,7 @@ GameObject:
   - component: {fileID: 4498279662373915304}
   - component: {fileID: 6213175951536830507}
   - component: {fileID: 353875605349740661}
+  - component: {fileID: 5662087296485018117}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19639,16 +19640,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allowDoubleJump: 1
   _allowDash: 0
+  _allowCrouch: 0
   _anim: {fileID: 5016610225510528848}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _detectorCount: 3
   _detectionRayLength: 0.1
+  _crouchSizeModifier: 0.5
+  _crouchSpeedModifier: 0.1
+  _crouchSlowdownFrames: 50
+  _immediateCrouchSlowdownThreshold: 0.1
   _acceleration: 120
   _moveClamp: 13
-  _deAcceleration: 60
+  _deceleration: 60
   _apexBonus: 100
+  _allowCreeping: 0
   _fallClamp: -60
   _minFallSpeed: 100
   _maxFallSpeed: 120
@@ -19660,6 +19666,7 @@ MonoBehaviour:
   _dashPower: 30
   _dashLength: 6
   _dashEndHorizontalMultiplier: 0.25
+  _forceDecay: 1
 --- !u!114 &4498279662373915304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19704,6 +19711,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 1
+--- !u!114 &5662087296485018117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016610225552077392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae97fbcb53f50e46a47633110f94498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5016610225824916464
 GameObject:
   m_ObjectHideFlags: 0
@@ -19973,6 +19992,8 @@ MonoBehaviour:
   _tiltSpeed: 30
   _maxIdleSpeed: 2.244
   _maxParticleFallSpeed: 0
+  _crouchScaleModifier: {x: 1, y: 0.5}
+  _sprite: {fileID: 5016610225510528849}
   _doubleJumpParticles: {fileID: 8637289933910568554}
   _doubleJumpClip: {fileID: 8300000, guid: 0d11fd7368b306b4c900241e3dadf28f, type: 3}
   _dashClip: {fileID: 8300000, guid: 6d2d16f85c087ea419d323141cd2145c, type: 3}
@@ -19980,6 +20001,7 @@ MonoBehaviour:
   _dashRingParticles: {fileID: 8296762621503668537}
   _deathParticles: {fileID: 1416756388968018650}
   _dashRingTransform: {fileID: 5035428749503846992}
+  _slideClips: []
 --- !u!1 &5462537368205931577
 GameObject:
   m_ObjectHideFlags: 0
