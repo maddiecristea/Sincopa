@@ -1,148 +1,283 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace TarodevController {
-    /// <summary>
-    /// This is a pretty filthy script. I was just arbitrarily adding to it as I went.
-    /// You won't find any programming prowess here.
-    /// This is a supplementary script to help with effects and animation. Basically a juice factory.
-    /// </summary>
     public class PlayerAnimator : MonoBehaviour {
-        [SerializeField] private Animator _anim;
-        [SerializeField] private AudioSource _source;
-        [SerializeField] private LayerMask _groundMask;
-        [SerializeField] private ParticleSystem _jumpParticles, _launchParticles;
-        [SerializeField] private ParticleSystem _moveParticles, _landParticles;
-        [SerializeField] private AudioClip[] _footsteps;
-        [SerializeField] private float _maxTilt = 5;
-        [SerializeField] private float _tiltSpeed = 30;
-        [SerializeField, Range(1f, 3f)] private float _maxIdleSpeed = 2;
-        [SerializeField] private float _maxParticleFallSpeed = -40;
-
         private IPlayerController _player;
-        private ParticleSystem.MinMaxGradient _currentGradient;
-        private Vector2 _movement;
+        private Animator _anim;
+        private SpriteRenderer _renderer;
+        private AudioSource _source;
 
-        void Awake() {
+        private void Awake() {
             _player = GetComponentInParent<IPlayerController>();
-
-            _player.OnGroundedChanged += OnLanded;
-            _player.OnJumping += OnJumping;
-            _player.OnDoubleJumping += OnDoubleJumping;
-            _player.OnDashingChanged += OnDashing;
-        }
-        
-        void OnDestroy() {
-            _player.OnGroundedChanged -= OnLanded;
-            _player.OnJumping -= OnJumping;
-            _player.OnDoubleJumping -= OnDoubleJumping;
-            _player.OnDashingChanged -= OnDashing;
+            _anim = GetComponent<Animator>();
+            _renderer = GetComponent<SpriteRenderer>();
+            _source = GetComponent<AudioSource>();
         }
 
-        private void OnDoubleJumping() {
-            _source.PlayOneShot(_doubleJumpClip);
-            _doubleJumpParticles.Play();
+        private void Start() {
+            _player.Jumped += OnPlayerOnJumped;
+            _player.DoubleJumped += PlayerOnDoubleJumped;
+            _player.Attacked += OnPlayerOnAttacked;
+            _player.GroundedChanged += OnPlayerOnGroundedChanged;
+            _player.DashingChanged += PlayerOnDashingChanged;
+            _player.WallGrabChanged += PlayerOnWallGrabChanged;
         }
 
-        private void OnDashing(bool dashing) {
-           
-            if (dashing) {
-                _anim.SetTrigger(DashKey);
-                _anim.ResetTrigger(GroundedKey);
-                _dashParticles.Play();
-                _dashRingTransform.up = new Vector3(_player.Input.X, _player.Input.Y);
-                _dashRingParticles.Play();
-                _source.PlayOneShot(_dashClip);
-            }
-            else {
-                _dashParticles.Stop();
-                _anim.SetTrigger(GroundedKey);
-            }
+        private void Update() {
+            if (_player.WallDirection != 0) _renderer.flipX = _player.WallDirection == -1;
+            else if (_player.Input.x != 0) _renderer.flipX = _player.Input.x < 0;
+
+            HandleGroundEffects();
+            HandleWallSlide();
+            SetParticleColor(Vector2.down, _moveParticles);
+            HandleAnimations();
         }
 
-        #region Extended
-    
-        [Header("EXTENDED")]
-        [SerializeField] private ParticleSystem _doubleJumpParticles;
-        [SerializeField] private AudioClip _doubleJumpClip,_dashClip;
-        [SerializeField] private ParticleSystem _dashParticles,_dashRingParticles;
-        [SerializeField] private Transform _dashRingTransform;
+        #region Ground movement
+
+        [Header("GROUND MOVEMENT")] [SerializeField]
+        private ParticleSystem _moveParticles;
+
+        [SerializeField] private float _tileChangeSpeed = .05f;
+        [SerializeField] private AudioClip[] _footstepClips;
+        private ParticleSystem.MinMaxGradient _currentGradient;
+        private readonly RaycastHit2D[] _groundHits = new RaycastHit2D[2];
+        private Vector2 _tiltVelocity;
+
+
+        private void HandleGroundEffects() {
+            // Move particles get bigger as you gain momentum
+            var speedPoint = Mathf.InverseLerp(0, _player.PlayerStats.MaxSpeed, Mathf.Abs(_player.Speed.x));
+            _moveParticles.transform.localScale = Vector3.MoveTowards(_moveParticles.transform.localScale, Vector3.one * speedPoint, 2 * Time.deltaTime);
+
+            // Tilt with slopes
+            transform.up = Vector2.SmoothDamp(transform.up, _grounded ? _player.GroundNormal : Vector2.up, ref _tiltVelocity, _tileChangeSpeed);
+        }
+
+        private int _stepIndex;
+
+        public void PlayFootstep() {
+            PlaySound(_footstepClips[_stepIndex++ % _footstepClips.Length], 0.01f);
+        }
 
         #endregion
 
-        private void OnJumping() {
-            _anim.SetTrigger(JumpKey);
-            _anim.ResetTrigger(GroundedKey);
+        #region Jumping
 
-            // Only play particles when grounded (avoid coyote)
-            if (_player.Grounded) {
-                SetColor(_jumpParticles);
-                SetColor(_launchParticles);
-                _jumpParticles.Play();
-            }
+        [Header("JUMPING")] [SerializeField] private float _minImpactForce = 20;
+        [SerializeField] private float _landAnimDuration = 0.1f;
+        [SerializeField] private AudioClip _landClip, _jumpClip, _doubleJumpClip;
+        [SerializeField] private ParticleSystem _jumpParticles, _launchParticles, _doubleJumpParticles, _landParticles;
+
+        private bool _jumpTriggered;
+        private bool _landed;
+        private bool _grounded;
+
+        private void OnPlayerOnJumped() {
+            _jumpTriggered = true;
+            PlaySound(_jumpClip, 0.05f, Random.Range(0.98f, 1.02f));
+            SetColor(_jumpParticles);
+            SetColor(_launchParticles);
+            _jumpParticles.Play();
         }
 
-    
+        private void PlayerOnDoubleJumped() {
+            PlaySound(_doubleJumpClip, 0.1f);
+            _doubleJumpParticles.Play();
+        }
 
-        private void OnLanded(bool grounded) {
-            if (grounded) {
-                _anim.SetTrigger(GroundedKey);
-                _source.PlayOneShot(_footsteps[Random.Range(0, _footsteps.Length)]);
-                _moveParticles.Play();
-                _landParticles.transform.localScale = Vector3.one * Mathf.InverseLerp(0, _maxParticleFallSpeed, _movement.y);
-                SetColor(_landParticles);
+        private void OnPlayerOnGroundedChanged(bool grounded, float impactForce) {
+            _grounded = grounded;
+            var p = Mathf.InverseLerp(0, _minImpactForce, impactForce);
+
+            if (impactForce >= _minImpactForce) {
+                _landed = true;
+                _landParticles.transform.localScale = p * Vector3.one;
                 _landParticles.Play();
+                SetColor(_landParticles);
+                PlaySound(_landClip, p * 0.1f);
+            }
+
+            if (_grounded) _moveParticles.Play();
+            else _moveParticles.Stop();
+        }
+
+        #endregion
+
+        #region Dash
+
+        [Header("DASHING")] [SerializeField] private AudioClip _dashClip;
+        [SerializeField] private ParticleSystem _dashParticles, _dashRingParticles;
+        [SerializeField] private Transform _dashRingTransform;
+
+        private void PlayerOnDashingChanged(bool dashing, Vector2 dir) {
+            if (dashing) {
+                _dashRingTransform.up = dir;
+                _dashRingParticles.Play();
+                _dashParticles.Play();
+                PlaySound(_dashClip, 0.1f);
             }
             else {
-                _moveParticles.Stop();
+                _dashParticles.Stop();
             }
         }
 
-        void Update() {
-            if (_player == null) return;
+        #endregion
 
-            // Flip the sprite
-            if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+        #region Attack
 
-            // Lean while running
-           // var targetRotVector = new Vector3(0, 0, Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
-            //_anim.transform.rotation = Quaternion.RotateTowards(_anim.transform.rotation, Quaternion.Euler(targetRotVector), _tiltSpeed * Time.deltaTime);
+        [Header("ATTACK")] [SerializeField] private float _attackAnimTime = 0.2f;
+        [SerializeField] private AudioClip _attackClip;
+        private bool _attacked;
 
-            // Speed up idle while running
-            //_anim.SetFloat(IdleSpeedKey, Mathf.Lerp(1, _maxIdleSpeed, Mathf.Abs(_player.Input.X)));
+        private void OnPlayerOnAttacked() {
+            _attacked = true;
+            PlaySound(_attackClip, 0.1f, Random.Range(0.97f, 1.03f));
+        }
+
+        #endregion
+
+        #region Wall Grab
+
+        [Header("Wall")] [SerializeField] private float _wallHitAnimTime = 0.2f;
+        [SerializeField] private ParticleSystem _wallSlideParticles;
+        [SerializeField] private AudioSource _wallSlideSource;
+        [SerializeField] private AudioClip[] _wallClimbClips;
+        [SerializeField] private float _maxWallSlideVolume = 0.2f;
+        [SerializeField] private float _wallSlideVolumeSpeed = 0.2f;
+        [SerializeField] private float _wallSlideParticleOffset = 0.25f;
+
+        private int _wallClimbIndex;
+        private bool _hitWall, _isOnWall, _isSliding;
+
+        private void PlayerOnWallGrabChanged(bool onWall) {
+            _hitWall = _isOnWall = onWall;
             
-            // Detect ground color
-            var groundHit = Physics2D.Raycast(transform.position, Vector3.down, 2, _groundMask);
-            if (groundHit && groundHit.transform.TryGetComponent(out SpriteRenderer r)) {
-                _currentGradient = new ParticleSystem.MinMaxGradient(r.color * 0.9f, r.color * 1.2f);
-                SetColor(_moveParticles);
+ 
+        }
+
+        private void HandleWallSlide() {
+            var slidingThisFrame = _isOnWall && !_grounded && _player.Speed.y < 0;
+
+            if (!_isSliding && slidingThisFrame) {
+                _isSliding = true;
+
+                _wallSlideParticles.Play();
+            }
+            else if (_isSliding && !slidingThisFrame) {
+                _isSliding = false;
+                _wallSlideParticles.Stop();
             }
 
-            _movement = _player.RawMovement; // Previous frame movement is more valuable
+            SetParticleColor(new Vector2(_player.WallDirection, 0), _wallSlideParticles);
+            _wallSlideParticles.transform.localPosition = new Vector3(_wallSlideParticleOffset * _player.WallDirection, 0);
+
+            _wallSlideSource.volume = _isSliding
+                ? Mathf.MoveTowards(_wallSlideSource.volume, _maxWallSlideVolume, _wallSlideVolumeSpeed * Time.deltaTime)
+                : 0;
+        }
+        
+        public void PlayWallClimbSound() {
+            PlaySound(_wallClimbClips[_wallClimbIndex++ % _wallClimbClips.Length], 0.1f);
         }
 
-        private void OnDisable() {
-            _moveParticles.Stop();
+        #endregion
+
+        #region Animation
+
+        private float _lockedTill;
+
+        private void HandleAnimations() {
+            var state = GetState();
+
+            _jumpTriggered = false;
+            _landed = false;
+            _attacked = false;
+            _hitWall = false;
+
+            if (state == _currentState) return;
+            _anim.CrossFade(state, 0, 0);
+            _currentState = state;
+
+            int GetState() {
+                if (Time.time < _lockedTill) return _currentState;
+
+                // Priorities
+                if (_attacked) return LockState(Attack, _attackAnimTime);
+
+                if (!_grounded) {
+                    if (_hitWall) return LockState(WallHit, _wallHitAnimTime);
+                    if (_player.WallDirection != 0) {
+                        switch (_player.Speed.y) {
+                            case 0:
+                                return WallIdle;
+                            case < 0:
+                                return WallSlide;
+                            case > 0:
+                                return WallClimb;
+                        }
+                    }
+                }
+
+                if (_player.Crouching) return Crouch;
+                if (_landed) return LockState(Land, _landAnimDuration);
+                if (_jumpTriggered) return Jump;
+
+                if (_grounded) return _player.Input.x == 0 ? Idle : Walk;
+                return _player.Speed.y > 0 ? Jump : Fall;
+
+                int LockState(int s, float t) {
+                    _lockedTill = Time.time + t;
+                    return s;
+                }
+            }
         }
 
-        private void OnEnable() {
-            _moveParticles.Play();
+        #region Cached Properties
+
+        private int _currentState;
+
+        private static readonly int Idle = Animator.StringToHash("Idle");
+        private static readonly int Walk = Animator.StringToHash("Walk");
+        private static readonly int Jump = Animator.StringToHash("Jump");
+        private static readonly int Fall = Animator.StringToHash("Fall");
+        private static readonly int Land = Animator.StringToHash("Land");
+        private static readonly int Attack = Animator.StringToHash("Attack");
+        private static readonly int Crouch = Animator.StringToHash("Crouch");
+
+        private static readonly int WallHit = Animator.StringToHash("WallHit");
+        private static readonly int WallIdle = Animator.StringToHash("WallIdle");
+        private static readonly int WallClimb = Animator.StringToHash("WallClimb");
+        private static readonly int WallSlide = Animator.StringToHash("WallSlide");
+
+        #endregion
+
+        #endregion
+
+        #region Particles
+
+        private void SetParticleColor(Vector2 detectionDir, ParticleSystem system) {
+            var hitCount = Physics2D.RaycastNonAlloc(transform.position, detectionDir, _groundHits, 2);
+            for (var i = 0; i < hitCount; i++) {
+                var hit = _groundHits[i];
+                if (!hit || hit.collider.isTrigger || !hit.transform.TryGetComponent(out SpriteRenderer r)) continue;
+                var color = r.color;
+                _currentGradient = new ParticleSystem.MinMaxGradient(color * 0.9f, color * 1.2f);
+                SetColor(system);
+                return;
+            }
         }
 
-        void SetColor(ParticleSystem ps) {
+        private void SetColor(ParticleSystem ps) {
             var main = ps.main;
             main.startColor = _currentGradient;
         }
 
-        #region Animation Keys
-
-        private static readonly int GroundedKey = Animator.StringToHash("Grounded");
-        private static readonly int IdleSpeedKey = Animator.StringToHash("IdleSpeed");
-        private static readonly int JumpKey = Animator.StringToHash("Jump");
-        private static readonly int DashKey = Animator.StringToHash("Dash");
-
         #endregion
+
+        private void PlaySound(AudioClip clip, float volume = 1, float pitch = 1) {
+            _source.pitch = pitch;
+            _source.PlayOneShot(clip, volume);
+        }
     }
 }
