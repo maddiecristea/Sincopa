@@ -443,3 +443,81 @@ Received Import Request.
   path: Assets/Sprites/Circle.png
   artifactKey: Guid(8620bcf7fa769e94fa548c2fc0325ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Sprites/Circle.png using Guid(8620bcf7fa769e94fa548c2fc0325ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77002ef67073959774c9560b7ddc0961') in 0.033345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 67.066997 seconds.
+  path: Assets/Sprites
+  artifactKey: Guid(69b154bf16d23bf4c8dfc20866b74b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites using Guid(69b154bf16d23bf4c8dfc20866b74b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad3b7ec2b718e28a603a7d07545c97ea') in 0.004913 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.597014 seconds.
+  path: Assets/_Scripts
+  artifactKey: Guid(f543b20844c05af46b8b4364c670451e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_Scripts using Guid(f543b20844c05af46b8b4364c670451e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab0d9069394f0f93d7e00a8ad6b61051') in 0.005533 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005782 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.794 seconds
+Domain Reload Profiling:
+	ReloadAssembly (794ms)
+		BeginReloadAssembly (110ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (616ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (149ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (337ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (38ms)
+				ProcessInitializeOnLoadAttributes (264ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2845 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 24 unused Assets / (95.3 KB). Loaded Objects now: 3448.
+Memory consumption went from 129.6 MB to 129.5 MB.
+Total: 2.864200 ms (FindLiveObjects: 0.194500 ms CreateObjectMapping: 0.110000 ms MarkObjects: 2.527100 ms  DeleteObjects: 0.031900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 181.459756 seconds.
+  path: Assets/Audio/death poof.wav
+  artifactKey: Guid(a8cc08c210f21c0428f629148f603efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/death poof.wav using Guid(a8cc08c210f21c0428f629148f603efc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '512a74a511d5a515eba038f445fb854f') in 0.049844 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 242.966407 seconds.
+  path: Assets/Animation/Player.controller
+  artifactKey: Guid(4c8cae7307e2d8544a688447cf38853d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Animation/Player.controller using Guid(4c8cae7307e2d8544a688447cf38853d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd6b1340cfffbd5a8258f5ed92fff04a') in 0.006812 seconds 

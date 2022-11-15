@@ -9952,7 +9952,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3836054526886193614}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -29736,6 +29736,7 @@ GameObject:
   - component: {fileID: 3836054527727189973}
   - component: {fileID: 3836054527727189974}
   - component: {fileID: 3836054527727189971}
+  - component: {fileID: 8501645054508035862}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -29837,6 +29838,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.25}
   m_Size: {x: 1.08, y: 0.5}
   m_Direction: 1
+--- !u!114 &8501645054508035862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836054527727189976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff504c56feabdd84085055c285451dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 3836054527376998747}
+  _anim: {fileID: 3836054527376998749}
+  _deathClip: {fileID: 8300000, guid: a8cc08c210f21c0428f629148f603efc, type: 3}
 --- !u!1 &3836054527797046537
 GameObject:
   m_ObjectHideFlags: 0
