@@ -71,7 +71,7 @@ namespace TarodevController
                     ""id"": ""1cc38c8b-e88f-482e-8d20-f375ea3bc45b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],

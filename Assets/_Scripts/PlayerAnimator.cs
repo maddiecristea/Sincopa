@@ -112,6 +112,8 @@ namespace TarodevController {
 
         private void PlayerOnDashingChanged(bool dashing, Vector2 dir) {
             if (dashing) {
+                _anim.SetTrigger(Dash);
+                _anim.ResetTrigger(Idle);
                 _dashRingTransform.up = dir;
                 _dashRingParticles.Play();
                 _dashParticles.Play();
@@ -247,6 +249,7 @@ namespace TarodevController {
         private static readonly int Jump = Animator.StringToHash("Jump");
         private static readonly int Fall = Animator.StringToHash("Fall");
         private static readonly int Land = Animator.StringToHash("Land");
+        private static readonly int Dash = Animator.StringToHash("Dash");
         private static readonly int Attack = Animator.StringToHash("Attack");
         private static readonly int Crouch = Animator.StringToHash("Crouch");
 

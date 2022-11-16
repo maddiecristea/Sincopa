@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 592959015}
   - component: {fileID: 592959014}
   - component: {fileID: 592959013}
+  - component: {fileID: 592959019}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -960,6 +961,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &592959019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592959011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5fd318384d8c0064cbe0e9e8278a002d, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &594160601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5e1e35f9b459b4a8fe90dbd1d5a686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyObject: {fileID: 1766333497}
+  keyObject: {fileID: 3179958656254985154, guid: 8ef2a6f014fcbf740beca77742a27e19, type: 3}
   ToggledObject: {fileID: 1950740312}
   onelinemessage:
     message: You've picked up the key.
@@ -4660,18 +4691,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3179958656254985182, guid: 8ef2a6f014fcbf740beca77742a27e19, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ef2a6f014fcbf740beca77742a27e19, type: 3}
 --- !u!224 &1766333496 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3179958656254985181, guid: 8ef2a6f014fcbf740beca77742a27e19, type: 3}
-  m_PrefabInstance: {fileID: 1766333495}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1766333497 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3179958656254985154, guid: 8ef2a6f014fcbf740beca77742a27e19, type: 3}
   m_PrefabInstance: {fileID: 1766333495}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1787319573

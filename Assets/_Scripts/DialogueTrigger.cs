@@ -6,12 +6,20 @@ namespace TarodevController {
     public class DialogueTrigger : MonoBehaviour
     {
         public Dialogue dialogue;
+        private PlayerInput playerInput;
         private PlayerInputActions _input;
 
         public void Start() {
             var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen(); 
             isOpen = false;
+        }
+
+        private void Awake() {
+
+            playerInput = GetComponent<PlayerInput>();
+            
             _input = new PlayerInputActions();
+            _input.Player.Enable();
         }
 
 
@@ -25,7 +33,7 @@ namespace TarodevController {
             var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen(); 
             if(other.CompareTag("Player"))
             {
-                if (_input.Player.Interact.ReadValue<bool>() && !isOpen)
+                if (_input.Player.Interact.ReadValue<float>() == 1 && !isOpen)
                 {
                     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);    
                     isOpen = true;     
@@ -45,7 +53,7 @@ namespace TarodevController {
         {      
 
             var isOpen = FindObjectOfType<DialogueManager>().CheckIfOpen();
-            if (_input.Player.Interact.ReadValue<bool>() && isOpen)
+            if (_input.Player.Interact.triggered && _input.Player.Interact.ReadValue<float>() == 1 && isOpen)
             {   
                 StartCoroutine(NextSentence());          
             }

@@ -12,13 +12,14 @@ namespace TarodevController {
     /// </summary>
     public class EnableDash : MonoBehaviour
     {
-        private PlayerController PC;
         public float time; 
+        public PlayerController PC;
 
         // Start is called before the first frame update
         void Start()
         {
             PC = gameObject.GetComponent<PlayerController>();
+            PC._canDash = false; 
         }
 
         void OnTriggerEnter2D(Collider2D other) 
