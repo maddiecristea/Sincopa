@@ -107,7 +107,7 @@ namespace TarodevController {
         #region Dash
 
         [Header("DASHING")] [SerializeField] private AudioClip _dashClip;
-        [SerializeField] private ParticleSystem _dashParticles, _dashRingParticles;
+        [SerializeField] private ParticleSystem _dashParticles, _dashRingParticles, _deathParticles;
         [SerializeField] private Transform _dashRingTransform;
 
         private void PlayerOnDashingChanged(bool dashing, Vector2 dir) {
@@ -231,6 +231,11 @@ namespace TarodevController {
                     return s;
                 }
             }
+        }
+
+        public void OnDeath() {
+            _anim.SetTrigger("Dead"); 
+            _deathParticles.Play();
         }
 
         #region Cached Properties

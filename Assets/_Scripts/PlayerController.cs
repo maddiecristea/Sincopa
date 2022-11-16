@@ -16,6 +16,7 @@ namespace TarodevController {
 
         private Vector2 _speed;
         private bool _jumpToConsume;
+        public bool _interact;
         private bool _endedJumpEarly;
         private int _fixedFrame;
         private bool _coyoteUsed;
@@ -36,7 +37,7 @@ namespace TarodevController {
         private int _groundHitCount;
         private Vector2 _currentExternalVelocity;
         private bool _dashToConsume;
-        private bool _canDash;
+        public bool _canDash;
         private Vector2 _dashVel;
         private bool _dashing;
         private int _startedDashing;
@@ -97,6 +98,7 @@ namespace TarodevController {
 
             if (_frameInput.DashDown) _dashToConsume = true;
             if (_frameInput.AttackDown) _attackToConsume = true;
+            //if (_frameInput.InteractDown) _interact = true;
         }
 
         protected virtual void FixedUpdate() {

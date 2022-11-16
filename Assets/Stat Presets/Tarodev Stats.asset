@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tarodev Stats
   m_EditorClassIdentifier: 
   Acceleration: 120
-  MaxSpeed: 14
+  MaxSpeed: 13
   Deceleration: 60
   AirDecelerationPenalty: 0.5
   GroundingForce: -1.5
@@ -22,7 +22,7 @@ MonoBehaviour:
   CrouchSpeedPenalty: 0.5
   CrouchSlowdownFrames: 20
   CrouchBufferCheck: 0.1
-  AllowDoubleJump: 0
+  AllowDoubleJump: 1
   JumpPower: 36
   MaxFallSpeed: 40
   FallSpeed: 110
@@ -30,8 +30,8 @@ MonoBehaviour:
   CoyoteFrames: 7
   JumpBufferFrames: 7
   AllowDash: 1
-  DashVelocity: 50
-  DashDurationFrames: 5
+  DashVelocity: 30
+  DashDurationFrames: 6
   DashEndHorizontalMultiplier: 0.25
   AllowWalls: 1
   RequireInputPush: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   WallDetectorSize: {x: 0.75, y: 1}
   ClimbableLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
   WallFallSpeed: 8
   MaxWallFallSpeed: 8
   WallJumpPower: {x: 30, y: 25}
@@ -48,7 +48,7 @@ MonoBehaviour:
   GrounderDistance: 0.1
   PlayerLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1
   AttackFrameCooldown: 15
   ExternalVelocityDecay: 100
   ShowWallDetection: 1
