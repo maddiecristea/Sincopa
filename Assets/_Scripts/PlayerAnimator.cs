@@ -111,7 +111,7 @@ namespace TarodevController {
         [SerializeField] private Transform _dashRingTransform;
 
         private void PlayerOnDashingChanged(bool dashing, Vector2 dir) {
-            if (dashing) {
+            if (dashing) {                
                 _anim.SetTrigger(Dash);
                 _anim.ResetTrigger(Idle);
                 _dashRingTransform.up = dir;
@@ -141,7 +141,7 @@ namespace TarodevController {
 
         #region Wall Grab
 
-        [Header("Wall")] [SerializeField] private float _wallHitAnimTime = 0.2f;
+        [Header("Wall")] [SerializeField] private float _wallHitAnimTime = 0.45f;
         [SerializeField] private ParticleSystem _wallSlideParticles;
         [SerializeField] private AudioSource _wallSlideSource;
         [SerializeField] private AudioClip[] _wallClimbClips;

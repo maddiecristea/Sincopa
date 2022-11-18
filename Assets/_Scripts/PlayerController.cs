@@ -15,7 +15,7 @@ namespace TarodevController {
         private PlayerInput _input;
 
         private Vector2 _speed;
-        private bool _jumpToConsume;
+        private bool _jumpToConsume;        
         public bool _interact;
         private bool _endedJumpEarly;
         private int _fixedFrame;
@@ -98,7 +98,6 @@ namespace TarodevController {
 
             if (_frameInput.DashDown) _dashToConsume = true;
             if (_frameInput.AttackDown) _attackToConsume = true;
-            //if (_frameInput.InteractDown) _interact = true;
         }
 
         protected virtual void FixedUpdate() {
