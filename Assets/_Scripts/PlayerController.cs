@@ -36,7 +36,7 @@ namespace TarodevController {
         private readonly Collider2D[] _wallHits = new Collider2D[5];
         private int _groundHitCount;
         private Vector2 _currentExternalVelocity;
-        private bool _dashToConsume;
+        public bool _dashToConsume;
         public bool _canDash;
         private Vector2 _dashVel;
         private bool _dashing;

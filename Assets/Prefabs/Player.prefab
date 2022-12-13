@@ -4896,7 +4896,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.4356155
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -15049,7 +15049,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 0.6111111, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -15095,7 +15095,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.4210968
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -29778,6 +29778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 8f3e4ac96e9fac84e96172956137e1c4, type: 2}
   _interact: 0
+  _dashToConsume: 0
   _canDash: 0
 --- !u!114 &3836054527727189970
 MonoBehaviour:
@@ -29825,8 +29826,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.6565287}
-  m_Size: {x: 0.6, y: 1.3130574}
+  m_Offset: {x: 0.0000009536743, y: 0.9832835}
+  m_Size: {x: 0.7742443, y: 1.966567}
   m_Direction: 0
 --- !u!70 &3836054527727189971
 CapsuleCollider2D:
@@ -29841,8 +29842,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
-  m_Size: {x: 1.08, y: 0.5}
+  m_Offset: {x: -0.014523348, y: 0.34438285}
+  m_Size: {x: 1.186783, y: 0.6887662}
   m_Direction: 1
 --- !u!114 &8501645054508035862
 MonoBehaviour:
@@ -29873,8 +29874,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 736a2aa6cfaab1642af15b00027f1790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 
-  slots: []
+  isFull: 00
+  slots:
+  - {fileID: 0}
 --- !u!114 &8064490693939185856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29888,7 +29890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 1
-  PC: {fileID: 0}
+  PC: {fileID: 3836054527727189972}
 --- !u!1 &3836054527797046537
 GameObject:
   m_ObjectHideFlags: 0

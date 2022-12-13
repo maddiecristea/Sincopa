@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Acceleration: 120
   MaxSpeed: 13
-  Deceleration: 60
+  Deceleration: 70
   AirDecelerationPenalty: 0.5
   GroundingForce: -1.5
-  AllowCreeping: 0
+  AllowCreeping: 1
   CrouchInputThreshold: -0.5
   CrouchSpeedPenalty: 0.5
   CrouchSlowdownFrames: 20
@@ -41,9 +41,9 @@ MonoBehaviour:
   ClimbableLayer:
     serializedVersion: 2
     m_Bits: 128
-  WallFallSpeed: 8
-  MaxWallFallSpeed: 8
-  WallJumpPower: {x: 30, y: 25}
+  WallFallSpeed: 1
+  MaxWallFallSpeed: 1
+  WallJumpPower: {x: 30, y: 30}
   WallJumpInputLossFrames: 20
   GrounderDistance: 0.1
   PlayerLayer:

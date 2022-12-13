@@ -19,14 +19,13 @@ namespace TarodevController {
         void Start()
         {
             PC = gameObject.GetComponent<PlayerController>();
-            PC._canDash = false; 
         }
 
         void OnTriggerEnter2D(Collider2D other) 
         {
             if(other.CompareTag("Power")) 
             {
-                PC._canDash = true; 
+                PC._dashToConsume = false; 
                 GameObject.FindGameObjectWithTag("Power").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
                 StartCoroutine(DisableDash());                     
             }
@@ -36,7 +35,6 @@ namespace TarodevController {
         IEnumerator DisableDash()
         {
             yield return new WaitForSeconds(time);
-            PC._canDash = false;
             GameObject.FindGameObjectWithTag("Power").GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
         }
     }

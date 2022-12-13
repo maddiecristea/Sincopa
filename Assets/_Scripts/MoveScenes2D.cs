@@ -7,7 +7,7 @@ public class MoveScenes2D : MonoBehaviour
 {
     [SerializeField] private string sceneToLoad;
     public Vector2 playerPosition;
-    public VectorValue playerStorage;
+    //public VectorValue playerStorage;
     public GameObject fadeInPanel;
     public GameObject fadeOutPanel;
     public float fadeWait;
@@ -23,7 +23,7 @@ public class MoveScenes2D : MonoBehaviour
     {
         if(other.CompareTag("Player") && !other.isTrigger)
         {
-            playerStorage.initialValue = playerPosition;
+            //playerStorage.initialValue = playerPosition;
             StartCoroutine(FadeCo());
             //SceneManager.LoadScene(sceneToLoad);
         }
