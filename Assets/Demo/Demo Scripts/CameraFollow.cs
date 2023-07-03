@@ -1,29 +1,35 @@
+using System;
+using TarodevController;
 using UnityEngine;
 
-namespace TarodevController {
-    public class CameraFollow : MonoBehaviour {
-        [SerializeField] private Transform _player;
-        [SerializeField] private float _smoothTime = 0.5f;
-        [SerializeField] private float _minX, _maxX;
+public class CameraFollow : MonoBehaviour {
+    [SerializeField] private Transform _player;
+    [SerializeField] private float _smoothTime = 0.3f;
+    [SerializeField] private Vector3 _offset = new Vector3(0, 1);
+    [SerializeField] private float _lookAheadDistance = 2;
+    [SerializeField] private float _lookAheadSpeed = 1;
 
-        private float _yLock;
-        private Vector3 _currentVel;
+    private Vector3 _velOffset;
+    private Vector3 _vel;
+    private IPlayerController _playerController;
+    private Vector3 _lookAheadVel;
 
-        private void Start() {
-            if (_player == null) {
-                var player = FindObjectOfType<PlayerController>();
-                if (player != null) _player = player.transform;
-            }
+    private void Awake() => _player.TryGetComponent(out _playerController);
 
-            _yLock = transform.position.y;
+    private void LateUpdate() {
+        if (_playerController != null) {
+            var projectedPos = _playerController.Velocity.normalized * _lookAheadDistance;
+            _velOffset = Vector3.SmoothDamp(_velOffset, projectedPos, ref _lookAheadVel, _lookAheadSpeed);
         }
 
+        Step(_smoothTime);
+    }
 
-        private void Update() {
-            if (!_player) return;
+    private void OnValidate() => Step(0);
 
-            var target = new Vector3(Mathf.Clamp(_player.position.x, _minX, _maxX), _yLock, -10);
-            transform.position = Vector3.SmoothDamp(transform.position, target, ref _currentVel, _smoothTime);
-        }
+    private void Step(float time) {
+        var goal = _player.position + _offset + _velOffset;
+        goal.z = -10;
+        transform.position = Vector3.SmoothDamp(transform.position, goal, ref _vel, time);
     }
 }

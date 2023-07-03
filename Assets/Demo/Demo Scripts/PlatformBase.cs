@@ -1,26 +1,23 @@
 using UnityEngine;
 
 namespace TarodevController {
-    public class PlatformBase : MonoBehaviour {
-        [Tooltip("If velocity is above this threshold the platform will not affect the player")] [SerializeField]
-        private float _unlockThreshold = 2.5f;
+    [RequireComponent(typeof(Collider2D))]
+    public abstract class PlatformBase : MonoBehaviour {
+        // set the transform's position in FixedUpdate, not in Update
+        protected abstract void FixedUpdate();
 
-        private Rigidbody2D _player;
-
-        private void OnCollisionEnter2D(Collision2D col) {
-            if (col.transform.TryGetComponent(out IPlayerController controller)) _player = col.transform.GetComponent<Rigidbody2D>();
+        protected virtual void OnCollisionEnter2D(Collision2D col)
+        {
+            if (IsOnTop(col.GetContact(0).normal))
+                col.transform.SetParent(transform);
         }
 
-        private void OnCollisionExit2D(Collision2D col) {
-            if (col.transform.TryGetComponent(out IPlayerController controller)) _player = null;
+        protected virtual void OnCollisionExit2D(Collision2D col)
+        {
+            col.transform.SetParent(null);
         }
 
-        protected void MovePlayer(Vector2 change) {
-            if (_player) {
-                // This prevents jumping and moving from being locked
-                if (_player.velocity.magnitude >= _unlockThreshold) return;
-                _player.MovePosition(_player.position - change);
-            }
-        }
+        // true if the platform's "up" and the other collider's "normal" are in opposite directions
+        protected virtual bool IsOnTop(Vector2 normal) => Vector2.Dot(transform.up, normal) < -0.5f;
     }
 }

@@ -1,65 +1,54 @@
 using UnityEngine;
 
-namespace TarodevController {
-    public class PatrolPlatform : PlatformBase {
-        [SerializeField] private Vector2[] _points;
-        [SerializeField] private float _speed = 1;
+namespace TarodevController
+{
+    public class PatrolPlatform : PlatformBase
+    {
+        [Tooltip("Local offsets from starting position")]
+        [SerializeField] private Vector2[] _points = new Vector2[] { Vector2.left, Vector2.right };
+        [SerializeField] private float _speed = 1.5f;
         [SerializeField] private bool _looped;
+        [SerializeField] private bool _ascending;
 
-
-        private Rigidbody2D _rb;
         private Vector2 _startPos;
-        private int _index;
-        private Vector2 Pos => _rb.position;
-        private Vector2 _lastPos;
-        private bool _ascending;
+        private Vector2 Target => _startPos + _points[_index];
+        private int _index = 0;
 
-        private void Awake() {
-            _rb = GetComponent<Rigidbody2D>();
-            _startPos = _rb.position;
+        private void Awake() => _startPos = transform.position;
+
+        protected override void FixedUpdate() {
+            if ((Vector2)transform.position == Target) UpdateNextIndex();
+            transform.position = Vector2.MoveTowards(transform.position, Target, _speed * Time.fixedDeltaTime);
         }
 
-        private void FixedUpdate() {
-            var target = _points[_index] + _startPos;
-            var newPos = Vector2.MoveTowards(Pos, target, _speed * Time.fixedDeltaTime);
-            _rb.MovePosition(newPos);
-
-            if (Pos == target) {
-                _index = _ascending ? _index + 1 : _index - 1;
-                if (_index >= _points.Length) {
-                    if (_looped) {
-                        _index = 0;
-                    }
-                    else {
-                        _ascending = false;
-                        _index--;
-                    }
-                }
-                else if (_index < 0) {
-                    _ascending = true;
-                    _index = 1;
-                }
+        private void UpdateNextIndex() {
+            if (_looped)
+                _index = (_ascending ? _index + 1 : _index + _points.Length - 1) % _points.Length;
+            else { // ping-pong
+                if (_index >= _points.Length - 1) _ascending = false;
+                else if (_index <= 0) _ascending = true;
+                _index = Mathf.Clamp(_index + (_ascending ? 1 : -1), 0, _points.Length - 1);
             }
-
-            var change = _lastPos - newPos;
-            _lastPos = newPos;
-
-            MovePlayer(change);
         }
 
         private void OnDrawGizmosSelected() {
-            if (Application.isPlaying) return;
-            var curPos = (Vector2)transform.position;
-            var previous = curPos + _points[0];
-            for (var i = 0; i < _points.Length; i++) {
-                var p = _points[i] + curPos;
+            var startPos = Application.isPlaying ? _startPos : (Vector2)transform.position;
+
+            var previous = startPos + _points[0];
+            Gizmos.DrawWireSphere(previous, 0.2f);
+            if (_looped) Gizmos.DrawLine(previous, startPos + _points[^1]); // ^1 is last index, or _points.Length - 1
+
+            for (var i = 1; i < _points.Length; i++) {
+                var p = startPos + _points[i];
                 Gizmos.DrawWireSphere(p, 0.2f);
                 Gizmos.DrawLine(previous, p);
-
                 previous = p;
-
-                if (_looped && i == _points.Length - 1) Gizmos.DrawLine(p, curPos + _points[0]);
             }
+        }
+
+        private void OnValidate() {
+            if (_points.Length == 0)
+                Debug.LogWarning("Set at least 1 position in the Points array to avoid index out-of-bounds exception", this);
         }
     }
 }
